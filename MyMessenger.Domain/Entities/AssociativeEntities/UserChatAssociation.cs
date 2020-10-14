@@ -11,5 +11,16 @@ namespace MyMessenger.Domain.Entities.AssociativeEntities
         public int UserId { get; set; }
         public Chat Chat { get; set; }
         public int ChatId { get; set; }
+
+        protected UserChatAssociation()
+        {
+
+        }
+
+        public UserChatAssociation(Guid id)
+            : base(id)
+        {
+
+        }
     }
 }

@@ -8,7 +8,18 @@ namespace MyMessenger.Domain.Entities.Messaging
     {
         public string Body { get; set; }
         public List<Attachment> Attachments { get; set; }
-        public int UserId { get; set; }
-        public int ChatId { get; set; }
+        public Guid UserId { get; set; }
+        public Guid ChatId { get; set; }
+
+        protected Message()
+        {
+
+        }
+
+        public Message(Guid id)
+            : base (id)
+        {
+
+        }
     }
 }

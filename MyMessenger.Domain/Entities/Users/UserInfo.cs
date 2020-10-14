@@ -10,8 +10,19 @@ namespace MyMessenger.Domain.Entities.Users
         public string Lastname { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public UserActiveStatuses ActiveStatus { get; set; }
+
+        protected UserInfo()
+        {
+
+        }
+
+        public UserInfo(Guid id)
+            : base(id)
+        {
+
+        }
     }
 }

@@ -8,6 +8,17 @@ namespace MyMessenger.Domain.Entities.Messaging
         public string FileName { get; set; }
         public string MimeType { get; set; }
         public byte[] Data { get; set; } // or fs path
-        public int MessageId { get; set; }
+        public Guid MessageId { get; set; }
+
+        protected Attachment()
+        {
+
+        }
+
+        public Attachment(Guid id)
+            : base(id)
+        {
+
+        }
     }
 }

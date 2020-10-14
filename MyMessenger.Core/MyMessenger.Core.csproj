@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyMessenger.Domain.Shared\MyMessenger.Domain.Shared.csproj" />
+    <ProjectReference Include="..\MyMessenger.Domain\MyMessenger.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
