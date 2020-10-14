@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger", "MyMessenger\MyMessenger.csproj", "{494E0D52-9C9C-4E32-A7C0-D5EBB49A88C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Domain.Shared", "MyMessenger.Domain.Shared\MyMessenger.Domain.Shared.csproj", "{8159104C-D1D3-415C-89C6-8F99502B8C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Domain", "MyMessenger.Domain\MyMessenger.Domain.csproj", "{31059705-2A0D-4C64-8F87-E81F992E771C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{494E0D52-9C9C-4E32-A7C0-D5EBB49A88C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{494E0D52-9C9C-4E32-A7C0-D5EBB49A88C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{494E0D52-9C9C-4E32-A7C0-D5EBB49A88C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{494E0D52-9C9C-4E32-A7C0-D5EBB49A88C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8159104C-D1D3-415C-89C6-8F99502B8C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8159104C-D1D3-415C-89C6-8F99502B8C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8159104C-D1D3-415C-89C6-8F99502B8C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8159104C-D1D3-415C-89C6-8F99502B8C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31059705-2A0D-4C64-8F87-E81F992E771C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31059705-2A0D-4C64-8F87-E81F992E771C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31059705-2A0D-4C64-8F87-E81F992E771C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31059705-2A0D-4C64-8F87-E81F992E771C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
