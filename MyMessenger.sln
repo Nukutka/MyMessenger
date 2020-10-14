@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Domain", "MyMes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Core", "MyMessenger.Core\MyMessenger.Core.csproj", "{013280E5-AEF1-4C2E-8737-75EAC3868DED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.EntityFramework", "MyMessenger.EntityFramework\MyMessenger.EntityFramework.csproj", "{67340925-5245-46C3-9E59-39DD58800830}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{013280E5-AEF1-4C2E-8737-75EAC3868DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013280E5-AEF1-4C2E-8737-75EAC3868DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013280E5-AEF1-4C2E-8737-75EAC3868DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67340925-5245-46C3-9E59-39DD58800830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67340925-5245-46C3-9E59-39DD58800830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67340925-5245-46C3-9E59-39DD58800830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67340925-5245-46C3-9E59-39DD58800830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
