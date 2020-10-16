@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using MyMessenger.Core.Configuration;
 
-namespace MyMessenger.EntityFramework
+namespace MyMessenger.EntityFramework.DbContext
 {
     public class DbContextFactory : IDesignTimeDbContextFactory<MyMessengerDbContext>
     {

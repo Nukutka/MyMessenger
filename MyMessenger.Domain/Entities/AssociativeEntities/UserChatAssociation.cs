@@ -8,9 +8,9 @@ namespace MyMessenger.Domain.Entities.AssociativeEntities
     public class UserChatAssociation : AuditedEntity<Guid>
     {
         public User User { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         public Chat Chat { get; set; }
-        public int ChatId { get; set; }
+        public Guid ChatId { get; set; }
 
         protected UserChatAssociation()
         {

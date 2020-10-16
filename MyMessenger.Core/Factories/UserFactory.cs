@@ -2,19 +2,19 @@
 using MyMessenger.Core.Services;
 using MyMessenger.Domain.Entities.Users;
 using MyMessenger.Domain.Shared.Enums.Users;
+using System;
 
 namespace MyMessenger.Core.Factories
 {
     public class UserFactory : BaseFactory
     {
-        private readonly ArgumentChecker argumentChecker;
-
         public UserFactory(ArgumentChecker argumentChecker)
+            : base(argumentChecker)
         {
-            this.argumentChecker = argumentChecker;
+
         }
 
-        public UserInfo CreateUserInfo(string firstname, string lastname, int age, string email, UserActiveStatuses activeStatus)
+        public UserInfo CreateUserInfo(string firstname, string lastname, string email, UserActiveStatuses activeStatus, Guid userId)
         {
             argumentChecker.CheckNullArgument(() => firstname);
             argumentChecker.CheckNullArgument(() => lastname);
@@ -24,9 +24,9 @@ namespace MyMessenger.Core.Factories
             {
                 Firstname = firstname,
                 Lastname = lastname,
-                Age = age,
                 Email = email,
                 ActiveStatus = activeStatus,
+                UserId = userId
             };
         }
 
@@ -41,6 +41,18 @@ namespace MyMessenger.Core.Factories
                 Login = login,
                 HashPassword = hashPassword,
                 UserInfo = userInfo
+            };
+        }
+
+        public User CreateUser(string login, string hashPassword)
+        {
+            argumentChecker.CheckNullArgument(() => login);
+            argumentChecker.CheckNullArgument(() => hashPassword);
+
+            return new User(guidGenerator.Create())
+            {
+                Login = login,
+                HashPassword = hashPassword
             };
         }
     }

@@ -8,7 +8,6 @@ namespace MyMessenger.Domain.Entities.Users
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public int Age { get; set; }
         public string Email { get; set; }
         public Guid UserId { get; set; }
 

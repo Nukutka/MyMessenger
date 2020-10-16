@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Domain.Shared", "MyMessenger.Domain.Shared\MyMessenger.Domain.Shared.csproj", "{8159104C-D1D3-415C-89C6-8F99502B8C0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Domain.Shared", "MyMessenger.Domain.Shared\MyMessenger.Domain.Shared.csproj", "{8159104C-D1D3-415C-89C6-8F99502B8C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Domain", "MyMessenger.Domain\MyMessenger.Domain.csproj", "{31059705-2A0D-4C64-8F87-E81F992E771C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Domain", "MyMessenger.Domain\MyMessenger.Domain.csproj", "{31059705-2A0D-4C64-8F87-E81F992E771C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Core", "MyMessenger.Core\MyMessenger.Core.csproj", "{013280E5-AEF1-4C2E-8737-75EAC3868DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Core", "MyMessenger.Core\MyMessenger.Core.csproj", "{013280E5-AEF1-4C2E-8737-75EAC3868DED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.EntityFramework", "MyMessenger.EntityFramework\MyMessenger.EntityFramework.csproj", "{67340925-5245-46C3-9E59-39DD58800830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.EntityFramework", "MyMessenger.EntityFramework\MyMessenger.EntityFramework.csproj", "{67340925-5245-46C3-9E59-39DD58800830}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Security", "MyMessenger.Security\MyMessenger.Security.csproj", "{632C114B-A68F-4928-B110-D1C27E97C1EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{67340925-5245-46C3-9E59-39DD58800830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67340925-5245-46C3-9E59-39DD58800830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67340925-5245-46C3-9E59-39DD58800830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632C114B-A68F-4928-B110-D1C27E97C1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632C114B-A68F-4928-B110-D1C27E97C1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632C114B-A68F-4928-B110-D1C27E97C1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632C114B-A68F-4928-B110-D1C27E97C1EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

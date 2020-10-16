@@ -8,11 +8,10 @@ namespace MyMessenger.Core.Factories
 {
     public class MessagingFactory : BaseFactory
     {
-        private readonly ArgumentChecker argumentChecker;
-
         public MessagingFactory(ArgumentChecker argumentChecker)
+            : base(argumentChecker)
         {
-            this.argumentChecker = argumentChecker;
+
         }
 
         public Attachment CreateAttachment(string fileName, byte[] data, string mimeType)

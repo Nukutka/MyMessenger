@@ -5,6 +5,9 @@ using System.IO;
 
 namespace MyMessenger.Core.Configuration
 {
+    /// <summary>
+    /// Use for db context factory, etc
+    /// </summary>
     public static class AppConfigManager
     {
         private static readonly ConcurrentDictionary<string, IConfigurationRoot> ConfigurationCache;
