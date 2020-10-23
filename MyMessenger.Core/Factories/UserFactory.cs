@@ -1,5 +1,4 @@
 ﻿using MyMessenger.Core.Factories.Abstraction;
-using MyMessenger.Core.Services;
 using MyMessenger.Domain.Entities.Users;
 using MyMessenger.Domain.Shared.Enums.Users;
 using System;
@@ -8,12 +7,6 @@ namespace MyMessenger.Core.Factories
 {
     public class UserFactory : BaseFactory
     {
-        public UserFactory(ArgumentChecker argumentChecker)
-            : base(argumentChecker)
-        {
-
-        }
-
         public UserInfo CreateUserInfo(string firstname, string lastname, string email, UserActiveStatuses activeStatus, Guid userId)
         {
             argumentChecker.CheckNullArgument(() => firstname);

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyMessenger.Core.Factories;
-using MyMessenger.Core.Services;
+using MyMessenger.Core.Services.Utils;
 using MyMessenger.Domain.Entities.Users;
 using MyMessenger.Domain.Shared.Enums.Users;
 using MyMessenger.EntityFramework.Seeds.Abstraction;

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyMessenger.Core\MyMessenger.Core.csproj" />
+    <ProjectReference Include="..\MyMessenger.EntityFramework\MyMessenger.EntityFramework.csproj" />
   </ItemGroup>
 
 </Project>

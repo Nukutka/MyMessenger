@@ -1,10 +1,11 @@
-﻿using Volo.Abp;
-using Volo.Abp.DependencyInjection;
+﻿using MyMessenger.Core.Services.Abstraction;
+using MyMessenger.Domain.Shared.Constants;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
 namespace MyMessenger.Core.Services
 {
-    public class ExceptionManager : ISingletonDependency
+    public class ExceptionManager : IExceptionManager
     {
         public void Friendly(string text = "")
         {
@@ -14,6 +15,11 @@ namespace MyMessenger.Core.Services
         public void NotFound(string text = "")
         {
             throw new EntityNotFoundException(text);
+        }
+
+        public void NullArgument(string name)
+        {
+            throw new UserFriendlyException($"{name}: {ExceptionMessages.NullArgument}");
         }
     }
 }

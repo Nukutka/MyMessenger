@@ -1,12 +1,11 @@
-﻿using MyMessenger.Domain.Shared.Constants;
+﻿using MyMessenger.Core.Services.Abstraction;
 using System;
 using System.Linq;
 using System.Reflection;
-using Volo.Abp.DependencyInjection;
 
 namespace MyMessenger.Core.Services
 {
-    public class ArgumentChecker : ISingletonDependency
+    public class ArgumentChecker : IArgumentChecker
     {
         private readonly ExceptionManager exceptionManager;
 
@@ -45,7 +44,7 @@ namespace MyMessenger.Core.Services
                     .First()
                     .Name;
 
-                exceptionManager.Friendly($"{name}: {ExceptionMessages.NullArgument}");
+                exceptionManager.NullArgument(name);
             }
         }
     }

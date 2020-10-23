@@ -1,5 +1,4 @@
 ﻿using MyMessenger.Core.Factories.Abstraction;
-using MyMessenger.Core.Services;
 using MyMessenger.Domain.Entities.Messaging;
 using System;
 using System.Collections.Generic;
@@ -8,12 +7,6 @@ namespace MyMessenger.Core.Factories
 {
     public class MessagingFactory : BaseFactory
     {
-        public MessagingFactory(ArgumentChecker argumentChecker)
-            : base(argumentChecker)
-        {
-
-        }
-
         public Attachment CreateAttachment(string fileName, byte[] data, string mimeType)
         {
             argumentChecker.CheckNullArgument(() => fileName);
