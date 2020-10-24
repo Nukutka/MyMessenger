@@ -1,4 +1,5 @@
 ﻿using MyMessenger.Domain;
+using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 
 namespace MyMessenger.Core

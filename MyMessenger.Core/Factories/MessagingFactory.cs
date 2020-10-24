@@ -9,11 +9,11 @@ namespace MyMessenger.Core.Factories
     {
         public Attachment CreateAttachment(string fileName, byte[] data, string mimeType)
         {
-            argumentChecker.CheckNullArgument(() => fileName);
-            argumentChecker.CheckNullArgument(() => data);
-            argumentChecker.CheckNullArgument(() => mimeType);
+            ArgumentChecker.CheckNullArgument(() => fileName);
+            ArgumentChecker.CheckNullArgument(() => data);
+            ArgumentChecker.CheckNullArgument(() => mimeType);
 
-            return new Attachment(guidGenerator.Create())
+            return new Attachment(GuidGenerator.Create())
             {
                 FileName = fileName,
                 Data = data,
@@ -24,9 +24,9 @@ namespace MyMessenger.Core.Factories
 
         public Message CreateMessage(string body, Guid userId)
         {
-            argumentChecker.CheckNullArgument(() => body);
+            ArgumentChecker.CheckNullArgument(() => body);
 
-            return new Message(guidGenerator.Create())
+            return new Message(GuidGenerator.Create())
             {
                 Body = body,
                 UserId = userId,
@@ -36,9 +36,9 @@ namespace MyMessenger.Core.Factories
 
         public Message CreateMessage(string body, Guid userId, List<Attachment> attachments)
         {
-            argumentChecker.CheckNullArgument(() => body);
+            ArgumentChecker.CheckNullArgument(() => body);
 
-            return new Message(guidGenerator.Create())
+            return new Message(GuidGenerator.Create())
             {
                 Body = body,
                 UserId = userId,
@@ -48,17 +48,17 @@ namespace MyMessenger.Core.Factories
 
         public void AddAttachmentToMessage(Message message, Attachment attachment)
         {
-            argumentChecker.CheckNullArgument(() => message);
-            argumentChecker.CheckNullArgument(() => attachment);
+            ArgumentChecker.CheckNullArgument(() => message);
+            ArgumentChecker.CheckNullArgument(() => attachment);
 
             message.Attachments.Add(attachment);
         }
 
         public Chat CreateChat(string name)
         {
-            argumentChecker.CheckNullArgument(() => name);
+            ArgumentChecker.CheckNullArgument(() => name);
 
-            return new Chat(guidGenerator.Create())
+            return new Chat(GuidGenerator.Create())
             {
                 Name = name,
                 Messages = new List<Message>()
@@ -67,9 +67,9 @@ namespace MyMessenger.Core.Factories
 
         public Chat CreateChat(string name, List<Message> messages)
         {
-            argumentChecker.CheckNullArgument(() => name);
+            ArgumentChecker.CheckNullArgument(() => name);
 
-            return new Chat(guidGenerator.Create())
+            return new Chat(GuidGenerator.Create())
             {
                 Name = name,
                 Messages = messages
@@ -78,8 +78,8 @@ namespace MyMessenger.Core.Factories
 
         public void AddMessageToChat(Chat chat, Message message)
         {
-            argumentChecker.CheckNullArgument(() => chat);
-            argumentChecker.CheckNullArgument(() => message);
+            ArgumentChecker.CheckNullArgument(() => chat);
+            ArgumentChecker.CheckNullArgument(() => message);
 
             chat.Messages.Add(message);
         }

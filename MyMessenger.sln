@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.EntityFramework
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Security", "MyMessenger.Security\MyMessenger.Security.csproj", "{632C114B-A68F-4928-B110-D1C27E97C1EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Application", "MyMessenger.Application\MyMessenger.Application.csproj", "{121DBB1C-6950-47AE-B173-6548A86FB796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Application", "MyMessenger.Application\MyMessenger.Application.csproj", "{121DBB1C-6950-47AE-B173-6548A86FB796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.WebApi", "MyMessenger.WebApi\MyMessenger.WebApi.csproj", "{EA7302D3-97C8-497B-B039-93FFEAB63780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{121DBB1C-6950-47AE-B173-6548A86FB796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{121DBB1C-6950-47AE-B173-6548A86FB796}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{121DBB1C-6950-47AE-B173-6548A86FB796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7302D3-97C8-497B-B039-93FFEAB63780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7302D3-97C8-497B-B039-93FFEAB63780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7302D3-97C8-497B-B039-93FFEAB63780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7302D3-97C8-497B-B039-93FFEAB63780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

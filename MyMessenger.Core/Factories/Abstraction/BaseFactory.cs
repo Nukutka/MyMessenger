@@ -1,20 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using MyMessenger.Core.Services;
-using Volo.Abp.DependencyInjection;
+﻿using MyMessenger.Core.Services.Abstraction;
 using Volo.Abp.Domain.Services;
-using Volo.Abp.Guids;
 
 namespace MyMessenger.Core.Factories.Abstraction
 {
-    public abstract class BaseFactory : DomainService, ISingletonDependency
+    public abstract class BaseFactory : DomainService
     {
-        protected readonly ArgumentChecker argumentChecker;
-        protected readonly IGuidGenerator guidGenerator;
-
-        public BaseFactory()
-        {
-            this.argumentChecker = ServiceProvider.GetRequiredService<ArgumentChecker>();
-            this.guidGenerator = SimpleGuidGenerator.Instance;
-        }
+        private IArgumentChecker argumentChecker;
+        protected IArgumentChecker ArgumentChecker => LazyGetRequiredService(ref argumentChecker);
     }
 }

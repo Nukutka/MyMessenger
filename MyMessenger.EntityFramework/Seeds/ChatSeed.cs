@@ -1,26 +1,32 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyMessenger.Core.Factories;
-using MyMessenger.Core.Services.Utils;
 using MyMessenger.Domain.Entities.Messaging;
+using MyMessenger.EntityFramework.Seeds.Abstraction;
 using System.Collections.Generic;
+using Volo.Abp.Guids;
 
 namespace MyMessenger.EntityFramework.Seeds
 {
     public static class ChatSeed
     {
-        private static readonly MessagingFactory messagingFactory;
+        private static readonly IGuidGenerator guidGenerator;
 
         static ChatSeed()
         {
-            messagingFactory = FactoryCreator.GetFactory<MessagingFactory>();
+            guidGenerator = BaseSeed.GuidGenerator;
         }
 
         public static List<Chat> AddChats(this ModelBuilder modelBuilder)
         {
             var chats = new List<Chat>
             {
-                messagingFactory.CreateChat("Chat 1"),
-                messagingFactory.CreateChat("Chat 2"),
+                new Chat(guidGenerator.Create())
+                {
+                    Name = "Chat 1"
+                },
+                new Chat(guidGenerator.Create())
+                {
+                    Name = "Chat 2"
+                }
             };
 
             modelBuilder.Entity<Chat>()

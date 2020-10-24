@@ -18,7 +18,7 @@ namespace MyMessenger.EntityFramework.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.PostgreSql)
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("MyMessenger.Domain.Entities.AssociativeEntities.UserChatAssociation", b =>
@@ -59,31 +59,31 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5f3b54aa-6006-4739-8fb9-a8302b08b5ac"),
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000027"),
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("6d3025af-76d6-4bde-aa9f-c4101b2ceb77"),
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000028"),
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("822b24e1-3225-4f54-b2ca-ef27d7c43a9e"),
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000029"),
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("2e66ddb7-b93d-4882-80a2-8950da779abe"),
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000030"),
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         });
                 });
 
@@ -168,16 +168,16 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "7705e3bf9b0f440c9ff27fd910497426",
+                            Id = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "27f6907bba0441338c2844d7a7966c2a",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
                             Name = "Chat 1"
                         },
                         new
                         {
-                            Id = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "02347e4e547841d99caea8475dcf160f",
+                            Id = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "cff3b1cf6db44236a99873db1defe002",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
                             Name = "Chat 2"
@@ -233,203 +233,203 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("eaf706e0-eb6f-407a-be70-1effff53afe7"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000007"),
                             Body = "Message 1",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "1ff029bf3c6d417090c552bfa777ef68",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "97acdabfcbf14b1681d81af65831238e",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("5c090bd2-821b-4f44-88e1-38ec2bc8b09b"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000008"),
                             Body = "Message 2",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "db49c7252843499b9a4b290252671957",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "ae171adf37db40f5a2e7af2272fab979",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("814aeb44-4e30-4083-94c7-addd7eed69e0"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000009"),
                             Body = "Message 3",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "cbfaea1c84c142f3a8b76b1ce97d365e",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "edb2927214e84f37ae618b0aa38d1a8d",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("75044ff7-bb1e-4a92-b1d6-ea2dc1c30e92"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000010"),
                             Body = "Message 4",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "a764f781b0af446d899ecfe3a1336cc4",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "3328b25bae6e4f16bcb3899c83e5950f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("27be630a-901f-4534-b621-0ea28be8e90d"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000011"),
                             Body = "Message 5",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "f3874236713f4b3c94e553d909a72bf1",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "1203a5fdeeed45838c71d118d685a91e",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("fe585d0e-b10e-4c54-877b-a6221fe20f41"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000012"),
                             Body = "Message 6",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "9330ca50c1e246fcaa5fc57c12bfc548",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "0149b859c63a4fe19abe04bbeba5ebfd",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("2c6cd90e-109d-4160-9298-7d05322ec8c8"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000013"),
                             Body = "Message 7",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "3ad07417ae9c456da8a0e6e12a57328b",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "d1a4b54325d04b619eb7466d4b4520fe",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("fdad02c3-0ceb-47fe-9d81-467dcea65153"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000014"),
                             Body = "Message 8",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "459f47e09eef47d0b5fd640c7a8dc501",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "b1edf39ea8764681addbf1df87b8d08d",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("32a9f45b-33f7-49c2-839b-d9893c5ef664"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000015"),
                             Body = "Message 9",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "09d8b9fb7471468b8797cae070378578",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "3011bfa843c14c24a9a87333467b2ed7",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("94d740ac-a745-43f3-ac85-f28fc2b4013c"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000016"),
                             Body = "Message 10",
-                            ChatId = new Guid("8a6bd227-963c-4621-81d9-a61ada3f1cc6"),
-                            ConcurrencyStamp = "f5d5ad7818cb496192e2bbe7877abd31",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            ConcurrencyStamp = "b790448781c84f53887ec118bbb80655",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("09661f65-7381-47cf-bbbc-4d616c4ec4d9"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000017"),
                             Body = "Message 11",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "8a03e5fad61043b2adc47bed93fb4d07",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "f159752ec2454b129a5b5ff3f03aca40",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("9404d889-223f-4c92-9245-41985470d085"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000018"),
                             Body = "Message 12",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "1aad93d646214414a37494e4032f1744",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "60b703620c4b48b3b065eebcf30f49a4",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("39ae7247-87af-4feb-a44d-85290d4f5b3e"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000019"),
                             Body = "Message 13",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "43ec7bed9bac4095888703c8781affed",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "5c8ff68b14d048df850cd48938afa93f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("301526d5-3cbb-4106-909e-3f898634317c"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000020"),
                             Body = "Message 14",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "dbd0baf95fad49bb962498e13beab80b",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "3c3c51e6c03b479781b71565ca50186f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("5064ed62-0f0b-4394-b5a6-e25000131b15"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000021"),
                             Body = "Message 15",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "412caef692614c3cae1c9aae9d0bfc38",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "049e89082a884558b78fd84b307475c2",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("dc612102-bd1a-40d7-8d93-1be66d5269ea"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000022"),
                             Body = "Message 16",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "6b336a9fb9da4626a43330a0be759583",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "908fd2140f6c4b5794bb5c98e119c9b3",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("8ce308e9-a7f3-4548-be71-d4ea0e2883f9"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000023"),
                             Body = "Message 17",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "d8fb3d72f3c04318a7b40aa83aee7508",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "78e58195318c499ca048420e846f80fa",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("d5330673-0945-4c43-a4b4-dea8c01c283b"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000024"),
                             Body = "Message 18",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "10e65cdb72724d50b5fda7216aefe157",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "23787a5ab19740e895d29fb682b995e7",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("20a6e612-1aa7-4015-bb98-48ae54a0d8b0"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000025"),
                             Body = "Message 19",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "61a9f6f77515496abf6765994762a27f",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "ecc5c4cd45db4fcd9490737212c7cf07",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
-                            Id = new Guid("e84c7043-677a-4004-a530-a61d6343abd3"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000026"),
                             Body = "Message 20",
-                            ChatId = new Guid("a266d520-5fc6-405c-a5df-5da6be408913"),
-                            ConcurrencyStamp = "489f3201b3364e2d9a01d48f7b905903",
+                            ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            ConcurrencyStamp = "ffbb6e42934840e4b8413fe8553a1e69",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         });
                 });
 
@@ -477,8 +477,8 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253"),
-                            ConcurrencyStamp = "487cb2894c624b82b5186879a767e8c1",
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            ConcurrencyStamp = "27e66d61f9c7477595ef8f973a4bdebd",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
                             HashPassword = "6298AA0670BFE6313A68AD4F3B4E82845C9CACE4D9CAD1B5883FF4BCE6B53AB84FC5C0191AACFC1FF650E45B673D014B67708AEA9FB5620287E703D95DA77BFB",
@@ -486,8 +486,8 @@ namespace MyMessenger.EntityFramework.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207"),
-                            ConcurrencyStamp = "1e4aaf44740748c086a06b1287ac025c",
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            ConcurrencyStamp = "9e3abf41077d4bc4b243c41049ffea49",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ExtraProperties = "{}",
                             HashPassword = "9A0E11B587FCBD3D236C80BBF8E43A59AC122CED771EBAB6EA54E579DEAB0DB8DF2EC592EDBE70EB6DFFD6B8834E2B3682E39F183DFCA53E01939348B4D519EC",
@@ -541,23 +541,23 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("56d8c417-ed2d-48d9-8b5a-4697b85865f9"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
                             ActiveStatus = 1,
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "test@test.com",
                             Firstname = "Nikita",
                             Lastname = "Nagovitsyn",
-                            UserId = new Guid("ce571cb2-8900-4f32-8db2-54be8caf9253")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
-                            Id = new Guid("776a2f5e-090c-41c2-9d11-a49d49da45fe"),
+                            Id = new Guid("00000000-0000-0000-0000-000000000004"),
                             ActiveStatus = 1,
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "test2@test.com",
                             Firstname = "Darya",
                             Lastname = "Shigabytdinova",
-                            UserId = new Guid("6c7fcdd8-f8de-41b0-8927-42c07b27a207")
+                            UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         });
                 });
 

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac" Version="3.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MyMessenger.Domain.Shared\MyMessenger.Domain.Shared.csproj" />
     <ProjectReference Include="..\MyMessenger.Domain\MyMessenger.Domain.csproj" />
   </ItemGroup>

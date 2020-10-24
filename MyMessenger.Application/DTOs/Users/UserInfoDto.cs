@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace MyMessenger.Application.DTOs.Users
 {
-    [AutoMap(typeof(User))]
+    [AutoMap(typeof(UserInfo))]
     public class UserInfoDtoInput
     {
         [Required]
@@ -18,7 +18,7 @@ namespace MyMessenger.Application.DTOs.Users
         public string Email { get; set; }
     }
 
-    [AutoMap(typeof(User))]
+    [AutoMap(typeof(UserInfo))]
     public class UserInfoDtoOutput : EntityDto<Guid>
     {
         public string Firstname { get; set; }

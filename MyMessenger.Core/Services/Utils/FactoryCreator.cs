@@ -11,9 +11,7 @@ namespace MyMessenger.Core.Services.Utils
         public static TFactory GetFactory<TFactory>()
             where TFactory : BaseFactory
         {
-            var exceptionManager = new ExceptionManager();
-            var argumentChecker = new ArgumentChecker(exceptionManager);
-            var factory = Activator.CreateInstance(typeof(TFactory), argumentChecker) as TFactory;
+            var factory = Activator.CreateInstance(typeof(TFactory)) as TFactory;
 
             return factory;
         }

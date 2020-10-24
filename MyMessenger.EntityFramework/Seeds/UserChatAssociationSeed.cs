@@ -4,18 +4,20 @@ using MyMessenger.Core.Services.Utils;
 using MyMessenger.Domain.Entities.AssociativeEntities;
 using MyMessenger.Domain.Entities.Messaging;
 using MyMessenger.Domain.Entities.Users;
+using MyMessenger.EntityFramework.Seeds.Abstraction;
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Guids;
 
 namespace MyMessenger.EntityFramework.Seeds
 {
     public static class UserChatAssociationSeed
     {
-        private readonly static AssociationsFactory associationFactory;
+        private readonly static IGuidGenerator guidGenerator;
 
         static UserChatAssociationSeed()
         {
-            associationFactory = FactoryCreator.GetFactory<AssociationsFactory>();
+            guidGenerator = BaseSeed.GuidGenerator;
         }
 
         public static List<UserChatAssociation> AddUserChatAssociations(this ModelBuilder modelBuilder, List<User> users, List<Chat> chats)
@@ -25,10 +27,27 @@ namespace MyMessenger.EntityFramework.Seeds
 
             var userChatAssociations = new List<UserChatAssociation>
             {
-                associationFactory.CreateUserChatAssociation(getUserIdByLogin("user1"), getChatIdByName("Chat 1")),
-                associationFactory.CreateUserChatAssociation(getUserIdByLogin("user2"), getChatIdByName("Chat 1")),
-                associationFactory.CreateUserChatAssociation(getUserIdByLogin("user1"), getChatIdByName("Chat 2")),
-                associationFactory.CreateUserChatAssociation(getUserIdByLogin("user2"), getChatIdByName("Chat 2")),
+                new UserChatAssociation(guidGenerator.Create())
+                {
+                    UserId = getUserIdByLogin("user1"),
+                    ChatId = getChatIdByName("Chat 1")
+                },
+                                
+                new UserChatAssociation(guidGenerator.Create())
+                {
+                    UserId = getUserIdByLogin("user2"),
+                    ChatId = getChatIdByName("Chat 1")
+                },               
+                new UserChatAssociation(guidGenerator.Create())
+                {
+                    UserId = getUserIdByLogin("user1"),
+                    ChatId = getChatIdByName("Chat 2")
+                },                
+                new UserChatAssociation(guidGenerator.Create())
+                {
+                    UserId = getUserIdByLogin("user1"),
+                    ChatId = getChatIdByName("Chat 2")
+                },
             };
 
             modelBuilder.Entity<UserChatAssociation>()

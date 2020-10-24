@@ -9,11 +9,11 @@ namespace MyMessenger.Core.Factories
     {
         public UserInfo CreateUserInfo(string firstname, string lastname, string email, UserActiveStatuses activeStatus, Guid userId)
         {
-            argumentChecker.CheckNullArgument(() => firstname);
-            argumentChecker.CheckNullArgument(() => lastname);
-            argumentChecker.CheckNullArgument(() => email);
+            ArgumentChecker.CheckNullArgument(() => firstname);
+            ArgumentChecker.CheckNullArgument(() => lastname);
+            ArgumentChecker.CheckNullArgument(() => email);
 
-            return new UserInfo(guidGenerator.Create())
+            return new UserInfo(GuidGenerator.Create())
             {
                 Firstname = firstname,
                 Lastname = lastname,
@@ -25,11 +25,11 @@ namespace MyMessenger.Core.Factories
 
         public User CreateUser(string login, string hashPassword, UserInfo userInfo)
         {
-            argumentChecker.CheckNullArgument(() => login);
-            argumentChecker.CheckNullArgument(() => hashPassword);
-            argumentChecker.CheckNullArgument(() => userInfo);
+            ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => hashPassword);
+            ArgumentChecker.CheckNullArgument(() => userInfo);
 
-            return new User(guidGenerator.Create())
+            return new User(GuidGenerator.Create())
             {
                 Login = login,
                 HashPassword = hashPassword,
@@ -39,13 +39,25 @@ namespace MyMessenger.Core.Factories
 
         public User CreateUser(string login, string hashPassword)
         {
-            argumentChecker.CheckNullArgument(() => login);
-            argumentChecker.CheckNullArgument(() => hashPassword);
+            ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => hashPassword);
 
-            return new User(guidGenerator.Create())
+            return new User(GuidGenerator.Create())
             {
                 Login = login,
                 HashPassword = hashPassword
+            };
+        }
+
+        public User CreateUser(User user)
+        {
+            ArgumentChecker.CheckNullArgument(() => user.Login);
+            ArgumentChecker.CheckNullArgument(() => user.HashPassword);
+
+            return new User(GuidGenerator.Create())
+            {
+                Login = user.Login,
+                HashPassword = user.HashPassword
             };
         }
     }

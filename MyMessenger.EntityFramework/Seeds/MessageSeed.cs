@@ -1,20 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyMessenger.Core.Factories;
-using MyMessenger.Core.Services.Utils;
 using MyMessenger.Domain.Entities.Messaging;
 using MyMessenger.Domain.Entities.Users;
+using MyMessenger.EntityFramework.Seeds.Abstraction;
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Guids;
 
 namespace MyMessenger.EntityFramework.Seeds
 {
     public static class MessageSeed
     {
-        private static readonly MessagingFactory messagingFactory;
+        private static readonly IGuidGenerator guidGenerator;
 
         static MessageSeed()
         {
-            messagingFactory = FactoryCreator.GetFactory<MessagingFactory>();
+            guidGenerator = BaseSeed.GuidGenerator;
         }
 
         public static List<Message> AddMessages(this ModelBuilder modelBuilder, List<User> users, List<Chat> chats)
@@ -26,32 +26,48 @@ namespace MyMessenger.EntityFramework.Seeds
 
             for (int i = 0; i < 5; i++)
             {
-                var message = messagingFactory.CreateMessage($"Message {i + 1}", getUserIdByLogin("user1"));
-                message.ChatId = getChatIdByName("Chat 1");
+                var message = new Message(guidGenerator.Create())
+                {
+                    Body = $"Message {i + 1}",
+                    UserId = getUserIdByLogin("user1"),
+                    ChatId = getChatIdByName("Chat 1")
+                };
 
                 messages.Add(message);
             }
 
             for (int i = 5; i < 10; i++)
             {
-                var message = messagingFactory.CreateMessage($"Message {i + 1}", getUserIdByLogin("user2"));
-                message.ChatId = getChatIdByName("Chat 1");
+                var message = new Message(guidGenerator.Create())
+                {
+                    Body = $"Message {i + 1}",
+                    UserId = getUserIdByLogin("user2"),
+                    ChatId = getChatIdByName("Chat 1")
+                };
 
                 messages.Add(message);
             }
 
             for (int i = 10; i < 15; i++)
             {
-                var message = messagingFactory.CreateMessage($"Message {i + 1}", getUserIdByLogin("user1"));
-                message.ChatId = getChatIdByName("Chat 2");
+                var message = new Message(guidGenerator.Create())
+                {
+                    Body = $"Message {i + 1}",
+                    UserId = getUserIdByLogin("user1"),
+                    ChatId = getChatIdByName("Chat 2")
+                };
 
                 messages.Add(message);
             }
 
             for (int i = 15; i < 20; i++)
             {
-                var message = messagingFactory.CreateMessage($"Message {i + 1}", getUserIdByLogin("user2"));
-                message.ChatId = getChatIdByName("Chat 2");
+                var message = new Message(guidGenerator.Create())
+                {
+                    Body = $"Message {i + 1}",
+                    UserId = getUserIdByLogin("user2"),
+                    ChatId = getChatIdByName("Chat 2")
+                };
 
                 messages.Add(message);
             }

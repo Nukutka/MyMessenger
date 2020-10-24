@@ -11,7 +11,7 @@ namespace MyMessenger.Core.Factories
     {
         public UserChatAssociation CreateUserChatAssociation(Guid userId, Guid chatId)
         {
-            return new UserChatAssociation(guidGenerator.Create())
+            return new UserChatAssociation(GuidGenerator.Create())
             {
                 UserId = userId,
                 ChatId = chatId

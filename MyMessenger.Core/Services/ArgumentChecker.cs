@@ -7,9 +7,9 @@ namespace MyMessenger.Core.Services
 {
     public class ArgumentChecker : IArgumentChecker
     {
-        private readonly ExceptionManager exceptionManager;
+        private readonly IExceptionManager exceptionManager;
 
-        public ArgumentChecker(ExceptionManager exceptionManager)
+        public ArgumentChecker(IExceptionManager exceptionManager)
         {
             this.exceptionManager = exceptionManager;
         }
