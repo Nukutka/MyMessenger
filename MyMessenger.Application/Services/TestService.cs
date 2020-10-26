@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using MyMessenger.Core.Factories;
+﻿using MyMessenger.Core.Factories;
+using MyMessenger.Core.Services.Abstraction;
 using MyMessenger.Domain.Entities.Users;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,12 +11,14 @@ namespace MyMessenger.Application.Services
     public class TestService : ApplicationService
     {
         private readonly IRepository<User> userRepository;
+        private readonly IExceptionManager exceptionManager;
         private readonly UserFactory userFactory;
 
-        public TestService(IRepository<User> userRepository, UserFactory userFactory)
+        public TestService(IRepository<User> userRepository, UserFactory userFactory, IExceptionManager exceptionManager)
         {
             this.userRepository = userRepository;
             this.userFactory = userFactory;
+            this.exceptionManager = exceptionManager;
         }
 
         public async Task<List<User>> GetUsersAsync()
@@ -31,6 +33,13 @@ namespace MyMessenger.Application.Services
             await userRepository.InsertAsync(user);
 
             return user;
+        }
+
+        public async Task<UserInfo> InsertUserInfo(UserInfo inputUser)
+        {
+            var userInfo = userFactory.CreateUserInfo("", "", "", Domain.Shared.Enums.Users.UserActiveStatuses.Offline, new System.Guid());
+            await Task.Delay(10);
+            return userInfo;
         }
     }
 }

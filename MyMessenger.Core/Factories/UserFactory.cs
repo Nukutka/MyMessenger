@@ -27,7 +27,6 @@ namespace MyMessenger.Core.Factories
         {
             ArgumentChecker.CheckNullArgument(() => login);
             ArgumentChecker.CheckNullArgument(() => hashPassword);
-            ArgumentChecker.CheckNullArgument(() => userInfo);
 
             return new User(GuidGenerator.Create())
             {
@@ -37,28 +36,27 @@ namespace MyMessenger.Core.Factories
             };
         }
 
-        public User CreateUser(string login, string hashPassword)
+        public User CreateUser(string login, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
         {
             ArgumentChecker.CheckNullArgument(() => login);
             ArgumentChecker.CheckNullArgument(() => hashPassword);
 
-            return new User(GuidGenerator.Create())
+            var user = new User(GuidGenerator.Create())
             {
                 Login = login,
                 HashPassword = hashPassword
             };
+
+            var userInfo = CreateUserInfo(firstname, lastname, email, activeStatus, user.Id);
+            user.UserInfo = userInfo;
+
+            return user;
         }
 
         public User CreateUser(User user)
         {
-            ArgumentChecker.CheckNullArgument(() => user.Login);
-            ArgumentChecker.CheckNullArgument(() => user.HashPassword);
-
-            return new User(GuidGenerator.Create())
-            {
-                Login = user.Login,
-                HashPassword = user.HashPassword
-            };
+            var userInfo = user.UserInfo;
+            return CreateUser(user.Login, user.HashPassword, userInfo.Firstname, userInfo.Lastname, userInfo.Email, userInfo.ActiveStatus);
         }
     }
 }

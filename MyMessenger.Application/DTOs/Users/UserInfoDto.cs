@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace MyMessenger.Application.DTOs.Users
 {
-    [AutoMap(typeof(UserInfo))]
+    [AutoMap(typeof(UserInfo), ReverseMap = true)]
     public class UserInfoDtoInput
     {
         [Required]

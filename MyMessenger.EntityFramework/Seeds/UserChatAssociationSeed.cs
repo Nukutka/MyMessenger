@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyMessenger.Core.Factories;
-using MyMessenger.Core.Services.Utils;
 using MyMessenger.Domain.Entities.AssociativeEntities;
 using MyMessenger.Domain.Entities.Messaging;
 using MyMessenger.Domain.Entities.Users;

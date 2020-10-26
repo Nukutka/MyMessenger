@@ -32,5 +32,13 @@ namespace MyMessenger.WebApi.Controllers
             var user = await testService.InsertUser(inputUser);
             return ObjectMapper.Map<User, UserDtoOutput>(user);
         }
+
+        [HttpPost("api/test/userInfos")]
+        public async Task<UserInfoDtoOutput> InsertUserInfoAsync([FromBody] UserInfoDtoInput model)
+        {
+            var inputUserInfo = ObjectMapper.Map<UserInfoDtoInput, UserInfo>(model);
+            var user = await testService.InsertUserInfo(inputUserInfo);
+            return ObjectMapper.Map<UserInfo, UserInfoDtoOutput>(user);
+        }
     }
 }
