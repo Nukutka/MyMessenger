@@ -27,4 +27,8 @@
     <ProjectReference Include="..\MyMessenger.Security\MyMessenger.Security.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DbContext\Extensions\" />
+  </ItemGroup>
+
 </Project>

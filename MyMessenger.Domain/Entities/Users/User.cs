@@ -3,7 +3,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace MyMessenger.Domain.Entities.Users
 {
-    public class User : AuditedAggregateRoot<Guid>
+    public class User : AuditedEntity<Guid>
     {
         public string Login { get; set; }
         public string HashPassword { get; set; }

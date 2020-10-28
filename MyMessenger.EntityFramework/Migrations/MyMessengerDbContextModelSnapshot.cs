@@ -132,12 +132,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("character varying(40)")
-                        .HasMaxLength(40);
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnName("CreationTime")
                         .HasColumnType("timestamp without time zone");
@@ -145,10 +139,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnName("CreatorId")
                         .HasColumnType("uuid");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnName("LastModificationTime")
@@ -169,17 +159,13 @@ namespace MyMessenger.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "27f6907bba0441338c2844d7a7966c2a",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             Name = "Chat 1"
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "cff3b1cf6db44236a99873db1defe002",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             Name = "Chat 2"
                         });
                 });
@@ -195,12 +181,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid>("ChatId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("character varying(40)")
-                        .HasMaxLength(40);
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnName("CreationTime")
                         .HasColumnType("timestamp without time zone");
@@ -208,10 +188,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnName("CreatorId")
                         .HasColumnType("uuid");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnName("LastModificationTime")
@@ -236,9 +212,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000007"),
                             Body = "Message 1",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "97acdabfcbf14b1681d81af65831238e",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -246,9 +220,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000008"),
                             Body = "Message 2",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "ae171adf37db40f5a2e7af2272fab979",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -256,9 +228,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000009"),
                             Body = "Message 3",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "edb2927214e84f37ae618b0aa38d1a8d",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -266,9 +236,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000010"),
                             Body = "Message 4",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "3328b25bae6e4f16bcb3899c83e5950f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -276,9 +244,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000011"),
                             Body = "Message 5",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "1203a5fdeeed45838c71d118d685a91e",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -286,9 +252,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000012"),
                             Body = "Message 6",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "0149b859c63a4fe19abe04bbeba5ebfd",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -296,9 +260,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000013"),
                             Body = "Message 7",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "d1a4b54325d04b619eb7466d4b4520fe",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -306,9 +268,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000014"),
                             Body = "Message 8",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "b1edf39ea8764681addbf1df87b8d08d",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -316,9 +276,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000015"),
                             Body = "Message 9",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "3011bfa843c14c24a9a87333467b2ed7",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -326,9 +284,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000016"),
                             Body = "Message 10",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000005"),
-                            ConcurrencyStamp = "b790448781c84f53887ec118bbb80655",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -336,9 +292,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000017"),
                             Body = "Message 11",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "f159752ec2454b129a5b5ff3f03aca40",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -346,9 +300,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000018"),
                             Body = "Message 12",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "60b703620c4b48b3b065eebcf30f49a4",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -356,9 +308,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000019"),
                             Body = "Message 13",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "5c8ff68b14d048df850cd48938afa93f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -366,9 +316,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000020"),
                             Body = "Message 14",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "3c3c51e6c03b479781b71565ca50186f",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -376,9 +324,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000021"),
                             Body = "Message 15",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "049e89082a884558b78fd84b307475c2",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000001")
                         },
                         new
@@ -386,9 +332,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000022"),
                             Body = "Message 16",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "908fd2140f6c4b5794bb5c98e119c9b3",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -396,9 +340,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000023"),
                             Body = "Message 17",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "78e58195318c499ca048420e846f80fa",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -406,9 +348,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000024"),
                             Body = "Message 18",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "23787a5ab19740e895d29fb682b995e7",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -416,9 +356,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000025"),
                             Body = "Message 19",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "ecc5c4cd45db4fcd9490737212c7cf07",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         },
                         new
@@ -426,9 +364,7 @@ namespace MyMessenger.EntityFramework.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000026"),
                             Body = "Message 20",
                             ChatId = new Guid("00000000-0000-0000-0000-000000000006"),
-                            ConcurrencyStamp = "ffbb6e42934840e4b8413fe8553a1e69",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             UserId = new Guid("00000000-0000-0000-0000-000000000003")
                         });
                 });
@@ -438,12 +374,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("character varying(40)")
-                        .HasMaxLength(40);
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnName("CreationTime")
                         .HasColumnType("timestamp without time zone");
@@ -451,10 +381,6 @@ namespace MyMessenger.EntityFramework.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnName("CreatorId")
                         .HasColumnType("uuid");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("text");
 
                     b.Property<string>("HashPassword")
                         .HasColumnType("text");
@@ -478,18 +404,14 @@ namespace MyMessenger.EntityFramework.Migrations
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
-                            ConcurrencyStamp = "27e66d61f9c7477595ef8f973a4bdebd",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             HashPassword = "6298AA0670BFE6313A68AD4F3B4E82845C9CACE4D9CAD1B5883FF4BCE6B53AB84FC5C0191AACFC1FF650E45B673D014B67708AEA9FB5620287E703D95DA77BFB",
                             Login = "user1"
                         },
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000003"),
-                            ConcurrencyStamp = "9e3abf41077d4bc4b243c41049ffea49",
                             CreationTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExtraProperties = "{}",
                             HashPassword = "9A0E11B587FCBD3D236C80BBF8E43A59AC122CED771EBAB6EA54E579DEAB0DB8DF2EC592EDBE70EB6DFFD6B8834E2B3682E39F183DFCA53E01939348B4D519EC",
                             Login = "user2"
                         });

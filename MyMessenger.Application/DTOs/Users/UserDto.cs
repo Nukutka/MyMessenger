@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
+using MyMessenger.Application.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Users;
-using System;
 using System.ComponentModel.DataAnnotations;
-using Volo.Abp.Application.Dtos;
 
 namespace MyMessenger.Application.DTOs.Users
 {
-    [AutoMap(typeof(User))]
-    public class UserDtoInput
+    [AutoMap(typeof(User), ReverseMap = true)]
+    public class UserDtoInput : BaseDtoInput
     {
         [Required]
         public string Login { get; set; }
@@ -19,7 +18,7 @@ namespace MyMessenger.Application.DTOs.Users
     }
 
     [AutoMap(typeof(User))]
-    public class UserDtoOutput : EntityDto<Guid>
+    public class UserDtoOutput : BaseDtoOutput
     {
         public string Login { get; set; }
         public UserInfoDtoOutput UserInfo { get; set; }

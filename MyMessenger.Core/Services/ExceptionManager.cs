@@ -1,5 +1,6 @@
 ﻿using MyMessenger.Core.Services.Abstraction;
 using MyMessenger.Domain.Shared.Constants;
+using System;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
@@ -14,6 +15,11 @@ namespace MyMessenger.Core.Services
 
         public void NotFound(string text = "")
         {
+            if (text.IsNullOrEmpty())
+            {
+                text = ExceptionMessages.NotFound;
+            }
+
             throw new EntityNotFoundException(text);
         }
 

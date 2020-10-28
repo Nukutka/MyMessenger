@@ -21,7 +21,6 @@ namespace MyMessenger.Core.Factories
             };
         }
 
-
         public Message CreateMessage(string body, Guid userId)
         {
             ArgumentChecker.CheckNullArgument(() => body);
@@ -65,14 +64,14 @@ namespace MyMessenger.Core.Factories
             };
         }
 
-        public Chat CreateChat(string name, List<Message> messages)
+        public Chat CreateChat(Guid id, string name)
         {
             ArgumentChecker.CheckNullArgument(() => name);
 
-            return new Chat(GuidGenerator.Create())
+            return new Chat(id)
             {
                 Name = name,
-                Messages = messages
+                Messages = new List<Message>()
             };
         }
 

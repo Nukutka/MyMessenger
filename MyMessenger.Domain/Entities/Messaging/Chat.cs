@@ -4,7 +4,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace MyMessenger.Domain.Entities.Messaging
 {
-    public class Chat : AuditedAggregateRoot<Guid>
+    public class Chat : AuditedEntity<Guid>
     {
         public string Name { get; set; }
         public List<Message> Messages { get; set; }
