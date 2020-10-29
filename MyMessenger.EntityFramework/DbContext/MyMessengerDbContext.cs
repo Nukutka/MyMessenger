@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyMessenger.EntityFramework.DbContext.Extensions;
 using MyMessenger.EntityFramework.Seeds;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ namespace MyMessenger.EntityFramework.DbContext
         {
             base.OnModelCreating(modelBuilder);
 
-            var users = modelBuilder.AddUsers();
+            var users = modelBuilder.ConfigureUser().AddUsers();
             var chats = modelBuilder.AddChats();
             var messages = modelBuilder.AddMessages(users, chats);
             var userChatAssociations = modelBuilder.AddUserChatAssociations(users, chats);

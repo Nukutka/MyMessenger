@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MyMessenger.Application;
+using MyMessenger.EntityFramework.DbContext;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.ExceptionHandling;
 using Volo.Abp.AspNetCore.Mvc;
@@ -51,6 +53,7 @@ namespace MyMessenger.WebApi
         {
             var app = context.GetApplicationBuilder();
             var env = context.GetEnvironment();
+            var configuration = context.GetConfiguration();
 
             if (env.IsDevelopment())
             {
@@ -71,6 +74,8 @@ namespace MyMessenger.WebApi
             });
 
             app.UseConfiguredEndpoints();
+
+            Automigrator.Migrate(configuration.GetConnectionString("PostgreSQL"));
         }
     }
 }
