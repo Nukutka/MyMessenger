@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MyMessenger.Application.Contracts.ControllerRequests.ChatController;
 using MyMessenger.Application.Contracts.DTOs.Messaging;
+using MyMessenger.Application.Contracts.DTOs.Users;
 using MyMessenger.Application.Services.Messaging;
 using MyMessenger.Domain.Entities.Messaging;
+using MyMessenger.Domain.Entities.Users;
 using MyMessenger.WebApi.Controllers.Abstraction;
 using System;
 using System.Collections.Generic;
@@ -36,6 +39,14 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chats);
         }
 
+        [HttpGet("api/chats/{chatId}/users")]
+        public async Task<List<UserDtoOutput>> GetChatUsersAsync(Guid chatId)
+        {
+            var users = await chatService.GetChatUsersAsync(chatId);
+
+            return ObjectMapper.Map<List<User>, List<UserDtoOutput>>(users);
+        }
+
         [HttpGet("api/chats/{id}")]
         public async Task<ChatDtoOutput> GetChatAsync(Guid id)
         {
@@ -45,19 +56,19 @@ namespace MyMessenger.WebApi.Controllers
         }
 
         [HttpPost("api/chats")]
-        public async Task<ChatDtoOutput> InsertChatAsync([FromBody] ChatDtoInput model)
+        public async Task<ChatDtoOutput> InsertChatAsync([FromBody] InsertChatInput model)
         {
-            var inputChat = MapDtoToEntity(model);
-            var chat = await chatService.InsertChatAsync(inputChat);
+            var inputChat = MapDtoToEntity(model.Chat);
+            var chat = await chatService.InsertChatAsync(inputChat, model.UserIds);
 
             return MapEntityToDto(chat);
         }
 
         [HttpPut("api/chats/{id}")]
-        public async Task<ChatDtoOutput> UpdateChatAsync(Guid id, [FromBody] ChatDtoInput model)
+        public async Task<ChatDtoOutput> UpdateChatAsync(Guid id, [FromBody] UpdateChatInput model)
         {
-            var inputChat = MapDtoToEntity(model);
-            var chat = await chatService.UpdateChatAsync(id, inputChat);
+            var inputChat = MapDtoToEntity(model.Chat);
+            var chat = await chatService.UpdateChatAsync(id, inputChat, model.UserIds);
 
             return MapEntityToDto(chat);
         }
