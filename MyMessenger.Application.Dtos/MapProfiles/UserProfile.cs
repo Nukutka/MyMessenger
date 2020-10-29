@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Users;
+using MyMessenger.Application.Contracts.DTOs.Users;
 using MyMessenger.Domain.Entities.Users;
 
-namespace MyMessenger.Application.AutomapperProfiles
+namespace MyMessenger.Application.Contracts.MapProfiles
 {
     public class UserProfile : Profile
     {

@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 
@@ -11,8 +9,7 @@ namespace MyMessenger.EntityFramework.DbContext
     {
         public static void Configure(
             IAbpDbContextRegistrationOptionsBuilder optionsBuilder,
-            string connectionString, 
-            Lazy<ILoggerFactory> loggerFactory)
+            string connectionString)
         {
             optionsBuilder.AddDefaultRepositories(includeAllEntities: true);
 
@@ -22,7 +19,6 @@ namespace MyMessenger.EntityFramework.DbContext
                 {
                     var builder = configContext.DbContextOptions;
                     builder.EnableSensitiveDataLogging();
-                    builder.UseLoggerFactory(loggerFactory.Value);
                     builder.UseNpgsql(connectionString, x => x.MigrationsAssembly("MyMessenger.EntityFramework"));
                 });
             });

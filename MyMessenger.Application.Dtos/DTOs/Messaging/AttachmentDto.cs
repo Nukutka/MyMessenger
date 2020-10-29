@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
-using MyMessenger.Application.DTOs.Abstraction;
+using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Messaging;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyMessenger.Application.DTOs.Messaging
+namespace MyMessenger.Application.Contracts.DTOs.Messaging
 {
     [AutoMap(typeof(Attachment), ReverseMap = true)]
     public class AttachmentDtoInput : BaseDtoInput

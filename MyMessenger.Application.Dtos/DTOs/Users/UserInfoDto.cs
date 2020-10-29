@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Abstraction;
+using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Users;
 using MyMessenger.Domain.Shared.Enums.Users;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyMessenger.Application.DTOs.Users
+namespace MyMessenger.Application.Contracts.DTOs.Users
 {
     [AutoMap(typeof(UserInfo), ReverseMap = true)]
     public class UserInfoDtoInput : BaseDtoInput

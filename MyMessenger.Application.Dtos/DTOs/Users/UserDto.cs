@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Abstraction;
+using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Users;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyMessenger.Application.DTOs.Users
+namespace MyMessenger.Application.Contracts.DTOs.Users
 {
     [AutoMap(typeof(User), ReverseMap = true)]
     public class UserDtoInput : BaseDtoInput

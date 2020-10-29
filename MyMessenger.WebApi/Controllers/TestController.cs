@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyMessenger.Application.DTOs.Users;
+using MyMessenger.Application.Contracts.DTOs.Users;
 using MyMessenger.Application.Services;
 using MyMessenger.Domain.Entities.Users;
 using System.Collections.Generic;

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Abstraction;
+using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Messaging;
 using System.Collections.Generic;
 
-namespace MyMessenger.Application.DTOs.Messaging
+namespace MyMessenger.Application.Contracts.DTOs.Messaging
 {
     [AutoMap(typeof(Chat), ReverseMap = true)]
     public class ChatDtoInput : BaseDtoInput

@@ -1,4 +1,4 @@
-﻿using MyMessenger.Application.DTOs.Abstraction;
+﻿using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Entities;
 

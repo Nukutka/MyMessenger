@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyMessenger.Application.DTOs.Messaging;
+using MyMessenger.Application.Contracts.DTOs.Messaging;
 using MyMessenger.Application.Services.Messaging;
 using MyMessenger.Domain.Entities.Messaging;
 using MyMessenger.WebApi.Controllers.Abstraction;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyMessenger.WebApi.Controllers

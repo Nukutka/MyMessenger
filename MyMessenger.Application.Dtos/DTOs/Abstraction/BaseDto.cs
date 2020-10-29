@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Application.Dtos;
 
-namespace MyMessenger.Application.DTOs.Abstraction
+namespace MyMessenger.Application.Contracts.DTOs.Abstraction
 {
     public class BaseDtoInput
     {

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Messaging;
+using MyMessenger.Application.Contracts.DTOs.Messaging;
 using MyMessenger.Domain.Entities.Messaging;
 using System.IO;
 
-namespace MyMessenger.Application.AutomapperProfiles
+namespace MyMessenger.Application.Contracts.MapProfiles
 {
     public class AttachmentProfile : Profile
     {

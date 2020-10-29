@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using MyMessenger.Application.DTOs.Abstraction;
+using MyMessenger.Application.Contracts.DTOs.Abstraction;
 using MyMessenger.Domain.Entities.Messaging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyMessenger.Application.DTOs.Messaging
+namespace MyMessenger.Application.Contracts.DTOs.Messaging
 {
     [AutoMap(typeof(Message), ReverseMap = true)]
     public class MessageDtoInput : BaseDtoInput
