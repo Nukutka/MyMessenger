@@ -1,19 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>8.0</LangVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.9" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="3.2.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="3.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyMessenger.Application.Contracts\MyMessenger.Application.Contracts.csproj" />
     <ProjectReference Include="..\MyMessenger.Core\MyMessenger.Core.csproj" />
-    <ProjectReference Include="..\MyMessenger.EntityFramework\MyMessenger.EntityFramework.csproj" />
   </ItemGroup>
 
 </Project>
