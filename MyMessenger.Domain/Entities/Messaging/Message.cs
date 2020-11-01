@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MyMessenger.Domain.Shared.Interfaces;
+using System;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace MyMessenger.Domain.Entities.Messaging
 {
-    public class Message : AuditedEntity<Guid>
+    public class Message : AuditedEntity<Guid>, IOwnedEntity
     {
         public string Body { get; set; }
         public List<Attachment> Attachments { get; set; }

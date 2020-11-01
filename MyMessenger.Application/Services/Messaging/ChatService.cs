@@ -50,7 +50,7 @@ namespace MyMessenger.Application.Services.Messaging
         {
             var chat = await chatRepository.FirstOrDefaultAsync(c => c.Id == id);
 
-            if (chat == null) ExceptionManager.NotFound();
+            if (chat == null) ExceptionManager.EntityNotFound();
 
             return chat;
         }
@@ -67,7 +67,7 @@ namespace MyMessenger.Application.Services.Messaging
 
         public async Task<Chat> UpdateChatAsync(Guid id, Chat inputChat, List<Guid> userIds = null)
         {
-            await CheckExistsEntity<Chat>(id);
+            await CheckExistsEntityAsync<Chat>(id);
             
             var chat = messagingFactory.CreateChat(id, inputChat.Name);
             await chatRepository.UpdateAsync(chat);
@@ -80,7 +80,7 @@ namespace MyMessenger.Application.Services.Messaging
 
         public async Task DeleteChatAsync(Guid id)
         {
-            await CheckExistsEntity<Chat>(id);
+            await CheckExistsEntityAsync<Chat>(id);
 
             await chatRepository.DeleteAsync(c => c.Id == id);
             await userChatAssociationsService.DeleteAssociationsByChatAsync(id);

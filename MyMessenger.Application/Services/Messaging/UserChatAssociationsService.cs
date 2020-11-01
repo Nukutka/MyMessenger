@@ -97,5 +97,13 @@ namespace MyMessenger.Application.Services.Messaging
             await DeleteAssociationsByChatAsync(chatId);
             await InsertAssociationsAsync(chatId, userIds);
         }
+
+        public async Task<bool> CheckUserInChatAsync(Guid chatId, Guid userId)
+        {
+            var check = await userChatAssociationRepository
+                .AnyAsync(uc => uc.ChatId == chatId && uc.UserId == userId);
+
+            return check;
+        }
     }
 }

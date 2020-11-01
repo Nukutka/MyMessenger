@@ -13,11 +13,11 @@ namespace MyMessenger.Core.Services
             throw new UserFriendlyException(text);
         }
 
-        public void NotFound(string text = "")
+        public void EntityNotFound(string text = null)
         {
-            if (text.IsNullOrEmpty())
+            if (text == null)
             {
-                text = ExceptionMessages.NotFound;
+                text = ExceptionMessages.EntityNotFound;
             }
 
             throw new EntityNotFoundException(text);
@@ -26,6 +26,17 @@ namespace MyMessenger.Core.Services
         public void NullArgument(string name)
         {
             throw new UserFriendlyException($"{name}: {ExceptionMessages.NullArgument}");
+        }
+
+        public void EntityForbiddenEdit(string text = null)
+        {
+            if (text.IsNullOrEmpty())
+            {
+                text = ExceptionMessages.EntityForbiddenEdit;
+            }
+
+            // 404 status code, simulated "not found"
+            throw new EntityNotFoundException(text);
         }
     }
 }

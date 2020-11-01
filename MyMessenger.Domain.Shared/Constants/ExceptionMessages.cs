@@ -4,6 +4,8 @@
     {
         public const string NullArgument = "Method argument was null";
 
-        public const string NotFound = "Entity not found";
+        public const string EntityNotFound = "Entity not found";
+
+        public const string EntityForbiddenEdit = "No rights to edit entity";
     }
 }

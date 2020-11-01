@@ -21,7 +21,7 @@ namespace MyMessenger.Core.Factories
             };
         }
 
-        public Message CreateMessage(string body, Guid userId)
+        public Message CreateMessage(string body, Guid userId, Guid chatId)
         {
             ArgumentChecker.CheckNullArgument(() => body);
 
@@ -29,19 +29,21 @@ namespace MyMessenger.Core.Factories
             {
                 Body = body,
                 UserId = userId,
+                ChatId = chatId,
                 Attachments = new List<Attachment>()
             };
         }
 
-        public Message CreateMessage(string body, Guid userId, List<Attachment> attachments)
+        public Message CreateMessage(Guid id, string body, Guid userId, Guid chatId)
         {
             ArgumentChecker.CheckNullArgument(() => body);
 
-            return new Message(GuidGenerator.Create())
+            return new Message(id)
             {
                 Body = body,
                 UserId = userId,
-                Attachments = attachments
+                ChatId = chatId,
+                Attachments = new List<Attachment>()
             };
         }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MyMessenger.Core.Services.Abstraction;
+using MyMessenger.Domain.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -49,14 +50,14 @@ namespace MyMessenger.Application.Services.Abstraction
         /// <summary>
         /// Check exists entity and throw not found
         /// </summary>
-        protected async Task CheckExistsEntity<TEntity>(Guid id)
+        protected async Task CheckExistsEntityAsync<TEntity>(Guid id)
             where TEntity : Entity<Guid>
         {
             var repository = GetRepository<TEntity>();
 
             var check = await repository.AnyAsync(e => e.Id == id);
 
-            if (!check) ExceptionManager.NotFound();
+            if (!check) ExceptionManager.EntityNotFound();
         }
 
         protected IRepository<TEntity> GetRepository<TEntity>()

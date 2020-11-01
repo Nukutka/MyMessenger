@@ -24,6 +24,7 @@ namespace MyMessenger.Application.Contracts.DTOs.Messaging
     {
         public string Body { get; set; }
         public Guid ChatId { get; set; }
+        public Guid UserId { get; set; }
         public List<AttachmentDtoOutput> Attachments { get; set; }
     }
 }
