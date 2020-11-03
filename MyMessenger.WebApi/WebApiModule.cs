@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using MyMessenger.Application;
-using MyMessenger.EntityFramework.DbContext;
 using Volo.Abp;
-using Volo.Abp.AspNetCore.ExceptionHandling;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Autofac;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
+using MyMessenger.WebApi.StartupFiles.Extensions;
 
 namespace MyMessenger.WebApi
 {
@@ -26,27 +23,9 @@ namespace MyMessenger.WebApi
             var services = context.Services;
             var configuration = services.GetConfiguration();
 
-            ConfigureExceptionHandling(services);
-            ConfigureSwaggerServices(services);
-        }
-
-        private void ConfigureExceptionHandling(IServiceCollection services)
-        {
-            services.Configure<AbpExceptionHandlingOptions>(options =>
-            {
-                options.SendExceptionsDetailsToClients = true;
-            });
-        }
-
-        private void ConfigureSwaggerServices(IServiceCollection services)
-        {
-            services.AddSwaggerGen(
-                options =>
-                {
-                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "MyMessenger API", Version = "v1" });
-                    options.DocInclusionPredicate((docName, description) => true);
-                }
-            );
+            services.AddCorsPolicy();
+            services.ConfigureExceptionHandling();
+            services.AddSwaggerServices();
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -57,25 +36,13 @@ namespace MyMessenger.WebApi
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
+                app.UseSwaggerService();
             }
 
             app.UseStaticFiles();
             app.UseRouting();
-
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "MyMessenger API");
-            });
-
             app.UseConfiguredEndpoints();
-
-            Automigrator.Migrate(configuration.GetConnectionString("PostgreSQL"));
+            app.ApplyMigrations(configuration);
         }
     }
 }
