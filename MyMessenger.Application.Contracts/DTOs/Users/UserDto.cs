@@ -12,15 +12,29 @@ namespace MyMessenger.Application.Contracts.DTOs.Users
         public string Login { get; set; }
 
         [Required]
+        public string Role { get; set; }
+
+        [Required]
         public string Password { get; set; }
 
-        public UserInfoDtoInput UserInfo { get; set; }
+        [Required]
+        public string Firstname { get; set; }
+
+        [Required]
+        public string Lastname { get; set; }
+
+        [Required]
+        public string Email { get; set; }
     }
 
     [AutoMap(typeof(User))]
     public class UserDtoOutput : BaseDtoOutput
     {
         public string Login { get; set; }
-        public UserInfoDtoOutput UserInfo { get; set; }
+        public string Firstname { get; set; }
+
+        public string Lastname { get; set; }
+
+        public string Email { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyMessenger.EntityFramework.DbContext;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -10,9 +11,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MyMessenger.EntityFramework.Migrations
 {
     [DbContext(typeof(MyMessengerDbContext))]
-    partial class MyMessengerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201103123208_RemoveUserInfo")]
+    partial class RemoveUserInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

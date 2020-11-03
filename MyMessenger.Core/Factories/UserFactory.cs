@@ -7,56 +7,55 @@ namespace MyMessenger.Core.Factories
 {
     public class UserFactory : BaseFactory
     {
-        public UserInfo CreateUserInfo(string firstname, string lastname, string email, UserActiveStatuses activeStatus, Guid userId)
+        public User CreateUser(string login, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
         {
+            ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => role);
+            ArgumentChecker.CheckNullArgument(() => hashPassword);
             ArgumentChecker.CheckNullArgument(() => firstname);
             ArgumentChecker.CheckNullArgument(() => lastname);
             ArgumentChecker.CheckNullArgument(() => email);
 
-            return new UserInfo(GuidGenerator.Create())
+            var user = new User(GuidGenerator.Create())
             {
+                Login = login,
+                Role = role,
+                HashPassword = hashPassword,
                 Firstname = firstname,
                 Lastname = lastname,
                 Email = email,
                 ActiveStatus = activeStatus,
-                UserId = userId
             };
+
+            return user;
         }
 
-        public User CreateUser(string login, string hashPassword, UserInfo userInfo)
+        public User CreateUser(Guid id, string login, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
         {
             ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => role);
             ArgumentChecker.CheckNullArgument(() => hashPassword);
+            ArgumentChecker.CheckNullArgument(() => firstname);
+            ArgumentChecker.CheckNullArgument(() => lastname);
+            ArgumentChecker.CheckNullArgument(() => email);
 
-            return new User(GuidGenerator.Create())
+            var user = new User(id)
             {
                 Login = login,
+                Role = role,
                 HashPassword = hashPassword,
-                UserInfo = userInfo
+                Firstname = firstname,
+                Lastname = lastname,
+                Email = email,
+                ActiveStatus = activeStatus,
             };
-        }
-
-        public User CreateUser(string login, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
-        {
-            ArgumentChecker.CheckNullArgument(() => login);
-            ArgumentChecker.CheckNullArgument(() => hashPassword);
-
-            var user = new User(GuidGenerator.Create())
-            {
-                Login = login,
-                HashPassword = hashPassword
-            };
-
-            var userInfo = CreateUserInfo(firstname, lastname, email, activeStatus, user.Id);
-            user.UserInfo = userInfo;
 
             return user;
         }
 
         public User CreateUser(User user)
         {
-            var userInfo = user.UserInfo;
-            return CreateUser(user.Login, user.HashPassword, userInfo.Firstname, userInfo.Lastname, userInfo.Email, userInfo.ActiveStatus);
+            return CreateUser(user.Login, user.Role, user.HashPassword, user.Firstname, user.Lastname, user.Email, user.ActiveStatus);
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using Volo.Abp.DependencyInjection;
-
-namespace MyMessenger.Security.Hash.Abstraction
+﻿namespace MyMessenger.Security.Hash.Abstraction
 {
-    public interface IHashFunction : ISingletonDependency
+    public interface IHashFunction
     {
-        string GetHashCode(string input);
-        string GetHashCode(byte[] input);
+        string GenerateHashCode(string input);
+        string GenerateHashCode(byte[] input);
     }
 }

@@ -1,12 +1,14 @@
 ﻿using MyMessenger.Application.Contracts;
 using MyMessenger.EntityFramework;
+using MyMessenger.Security;
 using Volo.Abp.Modularity;
 
 namespace MyMessenger.Application
 {
     [DependsOn(
         typeof(ApplicationContractsModule),
-        typeof(EntityFrameworkModule)
+        typeof(EntityFrameworkModule),
+        typeof(SecurityModule)
         )]
     public class ApplicationModule : AbpModule
     {

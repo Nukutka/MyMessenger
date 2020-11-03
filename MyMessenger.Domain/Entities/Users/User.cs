@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyMessenger.Domain.Shared.Enums.Users;
+using System;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace MyMessenger.Domain.Entities.Users
@@ -7,8 +8,12 @@ namespace MyMessenger.Domain.Entities.Users
     {
         public string Login { get; set; }
         public string HashPassword { get; set; }
+        public string Role { get; set; }
 
-        public UserInfo UserInfo { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Email { get; set; }
+        public UserActiveStatuses ActiveStatus { get; set; }
 
         protected User()
         {

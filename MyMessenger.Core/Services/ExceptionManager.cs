@@ -2,6 +2,7 @@
 using MyMessenger.Domain.Shared.Constants;
 using System;
 using Volo.Abp;
+using Volo.Abp.Authorization;
 using Volo.Abp.Domain.Entities;
 
 namespace MyMessenger.Core.Services
@@ -37,6 +38,16 @@ namespace MyMessenger.Core.Services
 
             // 404 status code, simulated "not found"
             throw new EntityNotFoundException(text);
+        }
+
+        public void UnsuccessfulAuthorize(string text = null)
+        {
+            if (text.IsNullOrEmpty())
+            {
+                text = ExceptionMessages.UnsuccessfulAuthorize;
+            }
+
+            throw new AbpAuthorizationException(text);
         }
     }
 }

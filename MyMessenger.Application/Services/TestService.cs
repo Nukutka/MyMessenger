@@ -34,12 +34,5 @@ namespace MyMessenger.Application.Services
 
             return user;
         }
-
-        public async Task<UserInfo> InsertUserInfo(UserInfo inputUser)
-        {
-            var userInfo = userFactory.CreateUserInfo("", "", "", Domain.Shared.Enums.Users.UserActiveStatuses.Offline, new System.Guid());
-            await Task.Delay(10);
-            return userInfo;
-        }
     }
 }

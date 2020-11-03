@@ -25,6 +25,7 @@ namespace MyMessenger.WebApi
 
             services.AddCorsPolicy();
             services.ConfigureExceptionHandling();
+            services.AddJwt(configuration);
             services.AddSwaggerServices();
         }
 
@@ -41,6 +42,8 @@ namespace MyMessenger.WebApi
 
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseConfiguredEndpoints();
             app.ApplyMigrations(configuration);
         }

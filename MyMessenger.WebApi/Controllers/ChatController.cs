@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyMessenger.Application.Contracts.ControllerRequests.ChatController;
 using MyMessenger.Application.Contracts.DTOs.Messaging;
@@ -6,6 +7,7 @@ using MyMessenger.Application.Contracts.DTOs.Users;
 using MyMessenger.Application.Services.Messaging;
 using MyMessenger.Domain.Entities.Messaging;
 using MyMessenger.Domain.Entities.Users;
+using MyMessenger.Domain.Shared.Constants;
 using MyMessenger.WebApi.Controllers.Abstraction;
 using System;
 using System.Collections.Generic;

@@ -8,7 +8,6 @@ namespace MyMessenger.EntityFramework.DbContext
     public partial class MyMessengerDbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<Chat> Chats { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
