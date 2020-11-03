@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyMessenger.Application.Contracts.DTOs.Messaging;
 using MyMessenger.Application.Services;
 using MyMessenger.Application.Services.Messaging;
 using MyMessenger.Domain.Entities.Messaging;
+using MyMessenger.Domain.Shared.Constants;
 using MyMessenger.WebApi.Controllers.Abstraction;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace MyMessenger.WebApi.Controllers
             this.checkOwnerService = checkOwnerService;
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/messages")]
         public async Task<List<MessageDtoOutput>> GetMessagesAsync()
         {
@@ -32,6 +35,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(messages);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/messages/chat/{chatId}")]
         public async Task<List<MessageDtoOutput>> GetMessagesAsync(Guid chatId)
         {
@@ -40,6 +44,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(messages);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/messages/{id}")]
         public async Task<MessageDtoOutput> GetMessageAsync(Guid id)
         {
@@ -48,6 +53,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(message);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpPost("api/messages")]
         public async Task<MessageDtoOutput> InsertMessageAsync([FromBody] MessageDtoInput model)
         {
@@ -59,6 +65,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(message);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpPut("api/messages/{id}")]
         public async Task<MessageDtoOutput> UpdateMessageAsync(Guid id, [FromBody] MessageDtoInput model)
         {
@@ -71,6 +78,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(message);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpDelete("api/messages/{id}")]
         public async Task DeleteMessageAync(Guid id)
         {

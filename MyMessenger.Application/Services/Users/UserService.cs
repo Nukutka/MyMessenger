@@ -1,4 +1,5 @@
-﻿using MyMessenger.Application.Services.Abstraction;
+﻿using Microsoft.EntityFrameworkCore;
+using MyMessenger.Application.Services.Abstraction;
 using MyMessenger.Core.Factories;
 using MyMessenger.Domain.Entities.Users;
 using MyMessenger.Domain.Shared.Enums.Users;
@@ -30,7 +31,7 @@ namespace MyMessenger.Application.Services.Users
 
         public async Task<User> GetUserAsync(Guid id)
         {
-            var user = await userRepository.GetAsync(u => u.Id == id);
+            var user = await userRepository.FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null) ExceptionManager.EntityNotFound();
 
@@ -39,7 +40,7 @@ namespace MyMessenger.Application.Services.Users
 
         public async Task<User> GetUserByLoginAsync(string login)
         {
-            var user = await userRepository.GetAsync(u => u.Login == login);
+            var user = await userRepository.FirstOrDefaultAsync(u => u.Login == login);
 
             if (user == null) ExceptionManager.EntityNotFound();
 

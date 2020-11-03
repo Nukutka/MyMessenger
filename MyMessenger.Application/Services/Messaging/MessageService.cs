@@ -45,7 +45,7 @@ namespace MyMessenger.Application.Services.Messaging
 
         public async Task<Message> GetMessageAsync(Guid id)
         {
-            var message = await messageRepository.GetAsync(m => m.Id == id);
+            var message = await messageRepository.FirstOrDefaultAsync(m => m.Id == id);
 
             if (message == null) ExceptionManager.EntityNotFound();
 

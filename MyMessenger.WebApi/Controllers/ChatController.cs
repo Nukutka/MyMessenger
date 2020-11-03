@@ -24,6 +24,7 @@ namespace MyMessenger.WebApi.Controllers
             this.chatService = chatService;
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/chats")]
         public async Task<List<ChatDtoOutput>> GetChatsAsync()
         {
@@ -33,6 +34,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chats);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/chats/user/{userId}")]
         public async Task<List<ChatDtoOutput>> GetUserChatsAsync(Guid userId)
         {
@@ -41,6 +43,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chats);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/chats/{chatId}/users")]
         public async Task<List<UserDtoOutput>> GetChatUsersAsync(Guid chatId)
         {
@@ -49,6 +52,7 @@ namespace MyMessenger.WebApi.Controllers
             return ObjectMapper.Map<List<User>, List<UserDtoOutput>>(users);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/chats/{id}")]
         public async Task<ChatDtoOutput> GetChatAsync(Guid id)
         {
@@ -57,6 +61,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chat);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpPost("api/chats")]
         public async Task<ChatDtoOutput> InsertChatAsync([FromBody] InsertChatInput model)
         {
@@ -66,6 +71,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chat);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpPut("api/chats/{id}")]
         public async Task<ChatDtoOutput> UpdateChatAsync(Guid id, [FromBody] UpdateChatInput model)
         {
@@ -75,6 +81,7 @@ namespace MyMessenger.WebApi.Controllers
             return MapEntityToDto(chat);
         }
 
+        [Authorize(Roles = UserRoles.All)]
         [HttpDelete("api/chats/{id}")]
         public async Task DeleteChatAsync(Guid id)
         {
