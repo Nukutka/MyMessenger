@@ -35,7 +35,7 @@ namespace MyMessenger.WebApi
             var env = context.GetEnvironment();
             var configuration = context.GetConfiguration();
 
-            if (env.IsDevelopment())
+            if (env.EnvironmentName == "Development" || env.EnvironmentName == "Docker")
             {
                 app.UseSwaggerService();
             }
