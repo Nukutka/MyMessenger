@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyMessenger.Application\MyMessenger.Application.csproj" />
+    <ProjectReference Include="..\..\MyMessenger.Application\MyMessenger.Application.csproj" />
     <ProjectReference Include="..\MyMessenger.TestsBase\MyMessenger.TestsBase.csproj" />
   </ItemGroup>
 
