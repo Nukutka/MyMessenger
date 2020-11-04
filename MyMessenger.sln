@@ -19,6 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.WebApi", "MyMes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessenger.Application.Contracts", "MyMessenger.Application.Contracts\MyMessenger.Application.Contracts.csproj", "{EBAD9726-C0DA-4911-BAAA-D851003C0922}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E572DF4B-3098-4F2F-B9FD-16D6BF955B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.Application.Tests", "MyMessenger.Application.Tests\MyMessenger.Application.Tests.csproj", "{51A3EDB4-D37E-43AD-A69D-0E605D54A786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessenger.TestsBase", "MyMessenger.TestsBase\MyMessenger.TestsBase.csproj", "{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,9 +63,21 @@ Global
 		{EBAD9726-C0DA-4911-BAAA-D851003C0922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBAD9726-C0DA-4911-BAAA-D851003C0922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBAD9726-C0DA-4911-BAAA-D851003C0922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A3EDB4-D37E-43AD-A69D-0E605D54A786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A3EDB4-D37E-43AD-A69D-0E605D54A786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A3EDB4-D37E-43AD-A69D-0E605D54A786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A3EDB4-D37E-43AD-A69D-0E605D54A786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51A3EDB4-D37E-43AD-A69D-0E605D54A786} = {E572DF4B-3098-4F2F-B9FD-16D6BF955B9D}
+		{8DEB91DA-D4DD-4C9B-B086-A1E7D16DC69B} = {E572DF4B-3098-4F2F-B9FD-16D6BF955B9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E17D65D0-960D-47F6-BC63-C8ADDE8A191B}
