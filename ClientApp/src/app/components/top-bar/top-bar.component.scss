@@ -1,0 +1,37 @@
+$sidebarColor: #636871;
+
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: $sidebarColor;
+  color: white;
+  font-weight: 600;
+
+  a {
+    transition: background-color .3s ease;
+
+    &.active, &:hover {
+      background: lighten($sidebarColor, 5%);
+    }
+
+    margin: 0px 16px;
+    text-transform: uppercase;
+    font-weight: 450;
+    display: block;
+    color: #d0d0d0;
+  }
+}
+
+
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.spacer {
+  flex: 1;
+}
