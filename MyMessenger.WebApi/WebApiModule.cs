@@ -40,6 +40,7 @@ namespace MyMessenger.WebApi
                 app.UseSwaggerService();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();

@@ -17,7 +17,7 @@ namespace MyMessenger.WebApi.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("api/auth")]
+        [HttpPost("api/auth/authenticate")]
         public async Task<AuthOutput> AuthenticateAsync([FromBody] AuthInput model)
         {
             var res = await authService.AuthenticateAsync(model);

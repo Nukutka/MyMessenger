@@ -1,0 +1,23 @@
+<!--    <div class="register-form">-->
+<!--      <input type="text" placeholder="Login"/>-->
+<!--      <input type="password" placeholder="Password"/>-->
+<!--      <button>Create an account</button>-->
+<!--      <p class="message">Already registered? <a href="#">Sign In</a></p>-->
+<!--    </div>-->
+<div class="container">
+  <div class="login-form">
+    <mat-form-field class="full-widht-field">
+      <mat-label>Login</mat-label>
+      <input matInput [(ngModel)]="login">
+    </mat-form-field>
+
+    <mat-form-field class="full-widht-field">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [(ngModel)]="password">
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="auth()">Sign In</button>
+    <a href="#" class="forgot-password-message">Forgot password?</a>
+    <p class="not-registered-message">Not registered? <a href="#">Create an account</a></p>
+  </div>
+</div>
