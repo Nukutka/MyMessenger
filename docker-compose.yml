@@ -1,6 +1,17 @@
 version: '3.3'
 
 services:
+  mymessenger_frontend:
+    container_name: 'mymessenger_frontend'
+    build: ./ClientApp
+    ports:
+      - "4201:4200"
+    depends_on:
+      - mymessenger_backend
+    volumes:
+      - ./ClientApp:/usr/src/ClientApp
+      - /usr/src/ClientApp/node_modules
+
   mymessenger_backend:
     container_name: 'mymessenger_backend'
     image: 'mymessenger_backend'
