@@ -12,7 +12,7 @@ import {MaterialModule} from './material.module';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MainComponent } from './components/main.component';
 import { LeftBarComponent } from './components/left-bar/left-bar.component';
-import { ContactListComponent } from './components/left-bar/contact-list/contact-list.component';
+import { ChatListComponent } from './components/left-bar/chat-list/chat-list.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { AuthComponent } from './components/auth/auth.component';
 
@@ -26,7 +26,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     TopBarComponent,
     MainComponent,
     LeftBarComponent,
-    ContactListComponent,
+    ChatListComponent,
     ChatComponent,
     AuthComponent
   ],

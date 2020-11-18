@@ -24,20 +24,21 @@ namespace MyMessenger.WebApi.Controllers
             this.chatService = chatService;
         }
 
+        //[Authorize(Roles = UserRoles.All)]
+        //[HttpGet("api/chats")]
+        //public async Task<List<ChatDtoOutput>> GetChatsAsync()
+        //{
+        //    var chats = await chatService.GetChatsQuery()
+        //        .ToListAsync();
+
+        //    return MapEntityToDto(chats);
+        //}
+
         [Authorize(Roles = UserRoles.All)]
         [HttpGet("api/chats")]
-        public async Task<List<ChatDtoOutput>> GetChatsAsync()
+        public async Task<List<ChatDtoOutput>> GetUserChatsAsync()
         {
-            var chats = await chatService.GetChatsQuery()
-                .ToListAsync();
-
-            return MapEntityToDto(chats);
-        }
-
-        [Authorize(Roles = UserRoles.All)]
-        [HttpGet("api/chats/user/{userId}")]
-        public async Task<List<ChatDtoOutput>> GetUserChatsAsync(Guid userId)
-        {
+            var userId = GetUserId();
             var chats = await chatService.GetUserChatsAsync(userId);
 
             return MapEntityToDto(chats);

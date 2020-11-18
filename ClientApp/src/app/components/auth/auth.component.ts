@@ -8,7 +8,7 @@ import { AuthService} from '../../services/auth.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  public login: string;
+  public email: string;
   public password: string;
 
   constructor(private authService: AuthService) { }
@@ -17,7 +17,7 @@ export class AuthComponent implements OnInit {
   }
 
   public auth(): void {
-    this.authService.login(this.login, this.password);
+    this.authService.login(this.email, this.password);
   }
 
 }

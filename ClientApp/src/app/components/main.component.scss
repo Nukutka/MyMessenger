@@ -1,10 +1,11 @@
-.example-container {
+.container {
   width: 100%;
-  height: auto;
+  height: 92%; // top-bar 8%
 }
 
 mat-drawer{
-  width: 15%;
+  width: auto;
+  height: auto;
   padding: 12px;
   display: flex;
   flex-direction: column;

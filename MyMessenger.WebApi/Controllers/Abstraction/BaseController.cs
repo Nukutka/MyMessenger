@@ -10,13 +10,11 @@ namespace MyMessenger.WebApi.Controllers.Abstraction
 
         }
 
-        /// <summary>
-        /// TODO: get userId from claims
-        /// </summary>
         protected Guid GetUserId()
         {
-            // seed value
-            return new Guid("00000000-0000-0000-0000-000000000001");
+            var userId = Guid.Parse(User.Identity.Name);
+
+            return userId;
         }
     }
 }

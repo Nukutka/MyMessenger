@@ -6,19 +6,13 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
+  private api: string;
 
-  api: string;
-
-  constructor(private http: HttpClient) {
+  constructor(protected http: HttpClient) {
     this.api = 'http://localhost:8000/api/';
   }
 
-  private getUrl(endpoint: string): string {
+  protected getUrl(endpoint: string): string {
     return this.api + endpoint;
-  }
-
-  public auth(login: string, password: string): Observable<any> {
-    const url = this.getUrl('auth/authenticate');
-    return this.http.post(url, {login, password});
   }
 }
