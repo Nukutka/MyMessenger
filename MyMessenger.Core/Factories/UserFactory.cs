@@ -7,9 +7,9 @@ namespace MyMessenger.Core.Factories
 {
     public class UserFactory : BaseFactory
     {
-        public User CreateUser(string login, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
+        public User CreateUser(string nickname, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
         {
-            ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => nickname);
             ArgumentChecker.CheckNullArgument(() => role);
             ArgumentChecker.CheckNullArgument(() => hashPassword);
             ArgumentChecker.CheckNullArgument(() => firstname);
@@ -18,7 +18,7 @@ namespace MyMessenger.Core.Factories
 
             var user = new User(GuidGenerator.Create())
             {
-                Login = login,
+                Nickname = nickname,
                 Role = role,
                 HashPassword = hashPassword,
                 Firstname = firstname,
@@ -30,9 +30,9 @@ namespace MyMessenger.Core.Factories
             return user;
         }
 
-        public User CreateUser(Guid id, string login, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
+        public User CreateUser(Guid id, string nickname, string role, string hashPassword, string firstname, string lastname, string email, UserActiveStatuses activeStatus)
         {
-            ArgumentChecker.CheckNullArgument(() => login);
+            ArgumentChecker.CheckNullArgument(() => nickname);
             ArgumentChecker.CheckNullArgument(() => role);
             ArgumentChecker.CheckNullArgument(() => hashPassword);
             ArgumentChecker.CheckNullArgument(() => firstname);
@@ -41,7 +41,7 @@ namespace MyMessenger.Core.Factories
 
             var user = new User(id)
             {
-                Login = login,
+                Nickname = nickname,
                 Role = role,
                 HashPassword = hashPassword,
                 Firstname = firstname,
@@ -55,7 +55,7 @@ namespace MyMessenger.Core.Factories
 
         public User CreateUser(User user)
         {
-            return CreateUser(user.Login, user.Role, user.HashPassword, user.Firstname, user.Lastname, user.Email, user.ActiveStatus);
+            return CreateUser(user.Nickname, user.Role, user.HashPassword, user.Firstname, user.Lastname, user.Email, user.ActiveStatus);
         }
     }
 }

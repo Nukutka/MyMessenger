@@ -20,12 +20,11 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       tap((event) => {
           if (event instanceof HttpResponse) {
-            console.log('Server response');
           }
         },
         (err) => {
           if (err instanceof HttpErrorResponse) {
-            console.log(err.status);
+            console.log(err);
             // notification
           }
         }

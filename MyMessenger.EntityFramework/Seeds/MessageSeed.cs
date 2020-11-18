@@ -19,7 +19,7 @@ namespace MyMessenger.EntityFramework.Seeds
 
         public static List<Message> AddMessages(this ModelBuilder modelBuilder, List<User> users, List<Chat> chats)
         {
-            Func<string, Guid> getUserIdByLogin = login => users.Find(u => u.Login == login).Id;
+            Func<string, Guid> getUserIdByLogin = nickname => users.Find(u => u.Nickname == nickname).Id;
             Func<string, Guid> getChatIdByName = name => chats.Find(u => u.Name == name).Id;
 
             var messages = new List<Message>(20);
@@ -29,7 +29,7 @@ namespace MyMessenger.EntityFramework.Seeds
                 var message = new Message(guidGenerator.Create())
                 {
                     Body = $"Message {i + 1}",
-                    UserId = getUserIdByLogin("user1"),
+                    UserId = getUserIdByLogin("Nukutka"),
                     ChatId = getChatIdByName("Chat 1")
                 };
 
@@ -41,7 +41,7 @@ namespace MyMessenger.EntityFramework.Seeds
                 var message = new Message(guidGenerator.Create())
                 {
                     Body = $"Message {i + 1}",
-                    UserId = getUserIdByLogin("user2"),
+                    UserId = getUserIdByLogin("Dashasexy"),
                     ChatId = getChatIdByName("Chat 1")
                 };
 
@@ -53,7 +53,7 @@ namespace MyMessenger.EntityFramework.Seeds
                 var message = new Message(guidGenerator.Create())
                 {
                     Body = $"Message {i + 1}",
-                    UserId = getUserIdByLogin("user1"),
+                    UserId = getUserIdByLogin("Nukutka"),
                     ChatId = getChatIdByName("Chat 2")
                 };
 
@@ -65,7 +65,7 @@ namespace MyMessenger.EntityFramework.Seeds
                 var message = new Message(guidGenerator.Create())
                 {
                     Body = $"Message {i + 1}",
-                    UserId = getUserIdByLogin("user2"),
+                    UserId = getUserIdByLogin("Dashasexy"),
                     ChatId = getChatIdByName("Chat 2")
                 };
 

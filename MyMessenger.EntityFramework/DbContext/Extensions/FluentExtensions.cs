@@ -9,7 +9,7 @@ namespace MyMessenger.EntityFramework.DbContext.Extensions
         {
             modelBuilder.Entity<User>(user =>
             {
-                user.HasIndex(u => u.Login).IsUnique();
+                user.HasIndex(u => u.Nickname).IsUnique();
                 user.HasIndex(u => u.Email).IsUnique();
             });
 

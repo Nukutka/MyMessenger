@@ -38,11 +38,11 @@ namespace MyMessenger.Application.Services.Users
             return user;
         }
 
-        public async Task<User> GetUserByLoginAsync(string login)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
-            var user = await userRepository.FirstOrDefaultAsync(u => u.Login == login);
+            var user = await userRepository.FirstOrDefaultAsync(u => u.Email == email);
 
-            if (user == null) ExceptionManager.EntityNotFound();
+            if (user == null) ExceptionManager.EntityNotFound("User with this email address was not found.");
 
             return user;
         }
@@ -50,7 +50,7 @@ namespace MyMessenger.Application.Services.Users
         public async Task<User> InsertUserAsync(User inputUser)
         {
             var hashPassword = hashFunction.GenerateHashCode(inputUser.HashPassword);
-            var user = userFactory.CreateUser(inputUser.Login, inputUser.Role, hashPassword, inputUser.Firstname, inputUser.Lastname, inputUser.Email, UserActiveStatuses.Offline);
+            var user = userFactory.CreateUser(inputUser.Nickname, inputUser.Role, hashPassword, inputUser.Firstname, inputUser.Lastname, inputUser.Email, UserActiveStatuses.Offline);
 
             await userRepository.InsertAsync(user);
 
@@ -60,7 +60,7 @@ namespace MyMessenger.Application.Services.Users
         public async Task<User> UpdateUserAsync(Guid id, User inputUser)
         {
             var hashPassword = hashFunction.GenerateHashCode(inputUser.HashPassword);
-            var user = userFactory.CreateUser(id, inputUser.Login, inputUser.Role, hashPassword, inputUser.Firstname, inputUser.Lastname, inputUser.Email, UserActiveStatuses.Offline);
+            var user = userFactory.CreateUser(id, inputUser.Nickname, inputUser.Role, hashPassword, inputUser.Firstname, inputUser.Lastname, inputUser.Email, UserActiveStatuses.Offline);
 
             await userRepository.UpdateAsync(user);
 

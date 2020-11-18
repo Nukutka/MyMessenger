@@ -22,7 +22,7 @@ namespace MyMessenger.Application.Services.Users
 
         public async Task<AuthOutput> AuthenticateAsync(AuthInput model)
         {
-            var user = await userService.GetUserByLoginAsync(model.Login);
+            var user = await userService.GetUserByEmailAsync(model.Email);
             var hashPassword = hashFunction.GenerateHashCode(model.Password);
 
             if (user == null || hashPassword != user.HashPassword)

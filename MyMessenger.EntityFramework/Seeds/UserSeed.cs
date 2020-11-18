@@ -26,9 +26,9 @@ namespace MyMessenger.EntityFramework.Seeds
             {
                 new User(guidGenerator.Create())
                 {
-                    Login = "user1",
+                    Nickname = "Nukutka",
                     Role = UserRoles.User,
-                    HashPassword = hashFunction.GenerateHashCode("user1"),
+                    HashPassword = hashFunction.GenerateHashCode("qwerty123456"),
                     Firstname = "Nikita",
                     Lastname = "Nagovitsyn",
                     Email = "test@test.com",
@@ -37,9 +37,9 @@ namespace MyMessenger.EntityFramework.Seeds
 
                 new User(guidGenerator.Create())
                 {
-                    Login = "user2",
+                    Nickname = "Dashasexy",
                     Role = UserRoles.User,
-                    HashPassword = hashFunction.GenerateHashCode("user2"),
+                    HashPassword = hashFunction.GenerateHashCode("qwerty123456"),
                     Firstname = "Darya",
                     Lastname = "Shigabytdinova",
                     Email = "test2@test.com",
