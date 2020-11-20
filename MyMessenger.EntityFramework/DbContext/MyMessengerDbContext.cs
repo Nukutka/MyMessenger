@@ -14,10 +14,20 @@ namespace MyMessenger.EntityFramework.DbContext
         {
             base.OnModelCreating(modelBuilder);
 
-            var users = modelBuilder.ConfigureUser().AddUsers();
-            var chats = modelBuilder.AddChats();
-            var messages = modelBuilder.AddMessages(users, chats);
-            var userChatAssociations = modelBuilder.AddUserChatAssociations(users, chats);
+            var users = modelBuilder
+                .ConfigureUser()
+                .AddUsers();
+
+            var chats = modelBuilder
+                .ConfigureChat()
+                .AddChats();
+
+            var messages = modelBuilder
+                .ConfigureMessage()
+                .AddMessages(users, chats);
+
+            var userChatAssociations = modelBuilder
+                .AddUserChatAssociations(users, chats);
         }
     }
 }

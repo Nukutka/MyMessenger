@@ -1,5 +1,5 @@
 ﻿using System;
-using Volo.Abp.DependencyInjection;
+using System.Linq.Expressions;
 
 namespace MyMessenger.Core.Services.Abstraction
 {
@@ -13,6 +13,6 @@ namespace MyMessenger.Core.Services.Abstraction
         /// <summary>
         /// If null throw exception with arg name
         /// </summary>
-        void CheckNullArgument<T>(Func<T> argumentFunc) where T : class;
+        void CheckNullArgument<T>(Expression<Func<T>> argumentFunc) where T : class;
     }
 }

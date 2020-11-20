@@ -149,7 +149,9 @@ namespace MyMessenger.EntityFramework.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("character varying(256)")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
@@ -176,7 +178,8 @@ namespace MyMessenger.EntityFramework.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Body")
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(4096)")
+                        .HasMaxLength(4096);
 
                     b.Property<Guid>("ChatId")
                         .HasColumnType("uuid");
@@ -386,12 +389,17 @@ namespace MyMessenger.EntityFramework.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("character varying(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Firstname")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("character varying(40)")
+                        .HasMaxLength(40);
 
                     b.Property<string>("HashPassword")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("LastModificationTime")
@@ -403,12 +411,17 @@ namespace MyMessenger.EntityFramework.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Lastname")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("character varying(40)")
+                        .HasMaxLength(40);
 
                     b.Property<string>("Nickname")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("character varying(40)")
+                        .HasMaxLength(40);
 
                     b.Property<string>("Role")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

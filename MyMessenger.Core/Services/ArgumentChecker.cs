@@ -1,7 +1,6 @@
 ﻿using MyMessenger.Core.Services.Abstraction;
 using System;
-using System.Linq;
-using System.Reflection;
+using System.Linq.Expressions;
 
 namespace MyMessenger.Core.Services
 {
@@ -13,6 +12,8 @@ namespace MyMessenger.Core.Services
         {
             this.exceptionManager = exceptionManager;
         }
+
+        // TODO: use CallerArgumentExpressionAttribute
 
         /// <summary>
         /// If null return false
@@ -31,19 +32,14 @@ namespace MyMessenger.Core.Services
         /// <summary>
         /// If null throw exception with arg name
         /// </summary>
-        public void CheckNullArgument<T>(Func<T> argumentFunc)
+        public void CheckNullArgument<T>(Expression<Func<T>> argumentFunc)
             where T : class
         {
-            T value = argumentFunc();
+            var value = argumentFunc.Compile().Invoke();
 
             if (value is null)
             {
-                var name = argumentFunc.Method
-                    .ReflectedType
-                    .GetRuntimeFields()
-                    .First()
-                    .Name;
-
+                var name = ((MemberExpression)argumentFunc.Body).Member.Name;
                 exceptionManager.NullArgument(name);
             }
         }
