@@ -17,6 +17,7 @@ export class AuthService extends HttpService{
     this.http.post(url, {email, password})
       .subscribe((response: any) => {
         localStorage.setItem('token', response.token);
+        localStorage.setItem('userId', response.user.id);
         this.router.navigate(['']);
       });
   }

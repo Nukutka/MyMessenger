@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="chat-list">
     <div *ngFor="let chat of chats">
-      <div class="chat">
+      <div class="chat" (click)="selectChat(chat)">
         <img class="chat-photo" src="https://sun9-4.userapi.com/impf/_RkkG0USqdDeVM9eCn-3piI7JhbwAPtnJfa2xQ/JugGS2HbMSc.jpg?size=1080x952&quality=96&proxy=1&sign=1798206c3dbfee0b37739539b275323d"
              alt=""/>
         <div class="chat-detail">

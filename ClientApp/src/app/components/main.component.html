@@ -2,7 +2,7 @@
 
 <mat-drawer-container class="container">
   <mat-drawer mode="side" opened>
-    <app-left-bar></app-left-bar>
+    <app-left-bar (selectedChatEvent)="selectedChat($event)"></app-left-bar>
   </mat-drawer>
   <mat-drawer-content>
     <app-chat></app-chat>

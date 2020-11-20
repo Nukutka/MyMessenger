@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Chat} from '../../models/chat.model';
 
 @Component({
   selector: 'app-left-bar',
@@ -12,4 +13,9 @@ export class LeftBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() selectedChatEvent = new EventEmitter<Chat>();
+
+  public selectedChat(chat: Chat): void {
+    this.selectedChatEvent.emit(chat);
+  }
 }
