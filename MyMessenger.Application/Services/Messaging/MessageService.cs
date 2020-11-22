@@ -31,7 +31,7 @@ namespace MyMessenger.Application.Services.Messaging
             return messageRepository.AsQueryable();
         }
 
-        public async Task<List<Message>> GetChatMessagesAsync(Guid chatId, bool orderByDate = false)
+        public async Task<List<Message>> GetChatMessagesAsync(Guid chatId, bool orderByDate = true)
         {
             var messages = messageRepository.Where(m => m.ChatId == chatId);
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {Message} from '../../models/message.model';
 import {MessageService} from '../../services/message.service';
 import {Chat} from '../../models/chat.model';
@@ -9,7 +9,7 @@ import {Chat} from '../../models/chat.model';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  chatName: string;
+  chat: Chat;
   messages: Message[];
   userId: string;
 
@@ -20,14 +20,23 @@ export class ChatComponent implements OnInit {
   }
 
   public loadMessages(chat: Chat): void {
-    this.chatName = chat.name;
+    this.chat = chat;
 
-    this.messageService.getMessages(chat.id).subscribe(
-      data => this.messages = data
+    this.messageService.getMessages(chat.id).subscribe(data => {
+        this.messages = data;
+      }
     );
   }
 
   public checkOwnerMessage(message: Message): boolean {
     return message.userId === this.userId;
+  }
+
+  public sendMessage(event): void {
+    const message = new Message(event.target.value, this.chat.id);
+    this.messageService.insertMessage(message).subscribe(data => {
+      this.messages.push(data);
+      event.target.value = '';
+  });
   }
 }

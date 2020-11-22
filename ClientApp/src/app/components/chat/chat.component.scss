@@ -47,7 +47,11 @@ $chatOwnerMsgColor: #b0b8d9;
     font-weight: 600;
   }
   &-main {
+    padding: 10px;
     flex-grow: 1;
+    overflow: scroll;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -179,5 +183,9 @@ $chatOwnerMsgColor: #b0b8d9;
     font-size: 14px;
     font-weight: 500;
   }
+}
+
+.feather-smile {
+  margin-left: 10px;
 }
 

@@ -11,4 +11,9 @@ export class MessageService extends HttpService {
     const url = this.getUrl('messages/chat/' + chatId);
     return this.http.get<Message[]>(url);
   }
+
+  public insertMessage(message: Message): Observable<Message> {
+    const url = this.getUrl('messages');
+    return this.http.post<Message>(url, message);
+  }
 }
