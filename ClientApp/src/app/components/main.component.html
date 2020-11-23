@@ -1,10 +1,12 @@
-<app-top-bar></app-top-bar>
+<div class="container">
+  <app-top-bar></app-top-bar>
 
-<mat-drawer-container class="container">
-  <mat-drawer mode="side" opened>
-    <app-left-bar (selectedChatEvent)="selectedChat($event)"></app-left-bar>
-  </mat-drawer>
-  <mat-drawer-content>
-    <app-chat></app-chat>
-  </mat-drawer-content>
-</mat-drawer-container>
+  <mat-drawer-container class="chat-container">
+    <mat-drawer mode="side" opened>
+      <app-left-bar (selectedChatEvent)="selectedChat($event)"></app-left-bar>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-chat></app-chat>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

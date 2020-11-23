@@ -28,16 +28,16 @@
     </div>
     <div class="chat-area-footer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-           stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+           stroke-linecap="round" stroke-linejoin="round" class="icon">
         <path
           d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
       </svg>
       <mat-form-field class="input-message">
-        <textarea matInput placeholder="Message" cdkTextareaAutosize cdkAutosizeMaxRows="5" (keydown.enter)="sendMessage($event)"></textarea>
+        <textarea class="input-field" matInput placeholder="Message" cdkTextareaAutosize cdkAutosizeMaxRows="5" (keydown.enter)="sendMessage($event)" (keyup.enter)="$event.target.value = ''"></textarea>
       </mat-form-field>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-           stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile">
+           stroke-linecap="round" stroke-linejoin="round" class="icon">
         <circle cx="12" cy="12" r="10"/>
         <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
       </svg>

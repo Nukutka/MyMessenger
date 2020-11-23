@@ -33,10 +33,11 @@ export class ChatComponent implements OnInit {
   }
 
   public sendMessage(event): void {
-    const message = new Message(event.target.value, this.chat.id);
+    const messageBody = event.target.value;
+    event.target.value = '';
+    const message = new Message(messageBody, this.chat.id);
     this.messageService.insertMessage(message).subscribe(data => {
       this.messages.push(data);
-      event.target.value = '';
   });
   }
 }
