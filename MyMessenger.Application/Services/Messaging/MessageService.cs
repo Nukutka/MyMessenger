@@ -31,16 +31,20 @@ namespace MyMessenger.Application.Services.Messaging
             return messageRepository.AsQueryable();
         }
 
-        public async Task<List<Message>> GetChatMessagesAsync(Guid chatId, bool orderByDate = true)
+        /// <summary>
+        /// Take 20 messages, skip offset messages
+        /// </summary>
+        public async Task<List<Message>> GetChatMessagesAsync(Guid chatId, int? offset)
         {
-            var messages = messageRepository.Where(m => m.ChatId == chatId);
+            var messages = await messageRepository.Where(m => m.ChatId == chatId)
+                .OrderByDescending(m => m.CreationTime)
+                .Skip(offset ?? 0)
+                .Take(20)
+                .ToListAsync();
 
-            if (orderByDate)
-            {
-                messages = messages.OrderBy(m => m.CreationTime);
-            }
+            messages.Reverse();
 
-            return await messages.ToListAsync();
+            return messages;
         }
 
         public async Task<Message> GetMessageAsync(Guid id)

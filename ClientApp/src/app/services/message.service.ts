@@ -7,8 +7,8 @@ import {Message} from '../models/message.model';
   providedIn: 'root'
 })
 export class MessageService extends HttpService {
-  public getMessages(chatId: string): Observable<Message[]> {
-    const url = this.getUrl('messages/chat/' + chatId);
+  public getMessages(chatId: string, offset: number): Observable<Message[]> {
+    const url = this.getUrl('messages/chat/' + chatId + '/' + offset);
     return this.http.get<Message[]>(url);
   }
 

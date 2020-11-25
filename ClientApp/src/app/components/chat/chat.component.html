@@ -12,7 +12,7 @@
         <span>+4</span>
       </div>
     </div>
-    <div class="chat-area-main" #scrollToBottom [scrollTop]="scrollToBottom.scrollHeight">
+    <div class="chat-area-main" cdkScrollable #scroll [scrollTop]="scroll.scrollHeight">
       <div *ngFor="let message of messages" >
         <div class="chat-msg" [ngClass] = "{'owner': checkOwnerMessage(message)}">
           <div class="chat-msg-profile">

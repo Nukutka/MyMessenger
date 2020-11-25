@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   }
 
   selectedChat(chat: Chat): void{
-    this.chatComponent.loadMessages(chat);
+    this.chatComponent.setChat(chat);
   }
 
 }

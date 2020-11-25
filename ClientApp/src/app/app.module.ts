@@ -19,6 +19,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import {AuthGuard} from './guards/auth.guard';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    InfiniteScrollModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent, canActivate: [AuthGuard] },

@@ -36,10 +36,10 @@ namespace MyMessenger.WebApi.Controllers
         }
 
         [Authorize(Roles = UserRoles.All)]
-        [HttpGet("api/messages/chat/{chatId}")]
-        public async Task<List<MessageDtoOutput>> GetMessagesAsync(Guid chatId)
+        [HttpGet("api/messages/chat/{chatId}/{offset?}")]
+        public async Task<List<MessageDtoOutput>> GetMessagesAsync(Guid chatId, int? offset = null)
         {
-            var messages = await messageService.GetChatMessagesAsync(chatId, true);
+            var messages = await messageService.GetChatMessagesAsync(chatId, offset);
 
             return MapEntityToDto(messages);
         }
